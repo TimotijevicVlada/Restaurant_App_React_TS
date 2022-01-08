@@ -1,0 +1,48 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+.App .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 7vh;
+  background-color: #e0e0e0;
+}
+
+.App .navbar .logo {
+  font-size: 22px;
+}
+
+.App .navbar .logo .fas {
+  margin-right: 5px;
+}
+
+.App .navbar .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .navbar .menu li {
+  list-style-type: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.App .products img {
+  width: 300px;
+  height: 200px;
+  margin-right: 10px;
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+.App {
+    .navbar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 7vh;
+        background-color: rgb(224, 224, 224);
+        .logo {
+            font-size: 22px;
+
+            .fas {
+                margin-right: 5px;
+            }
+        }
+
+        .menu {
+            display: flex;
+
+            li {
+                list-style-type: none;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+    .products {
+        img {
+            width: 300px;
+            height: 200px;
+            margin-right: 10px;
+        }
+    }
+}

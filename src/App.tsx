@@ -1,12 +1,15 @@
 import React from 'react';
-import './App.css';
+import './style/App.css';
+import Navbar from './components/Navbar';
+import Products from './components/Products';
 
 function App() {
 
 
   return (
     <div className="App">
-      <h1>Hello from React_TypeScript</h1>
+      <Navbar />
+      <Products />
     </div>
   );
 }
