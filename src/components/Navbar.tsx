@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -7,11 +8,11 @@ const Navbar = () => {
                 <i className="fas fa-utensils"></i>
                 <span>Restaurant</span>
             </div>
-            <ul className='menu'>
-                <li>Home</li>
-                <li>Cart</li>
-                <li>Admin</li>
-            </ul>
+            <div className='menu'>
+                <Link className='link' to="/">Home</Link>
+                <Link className='link' to="/cart">Cart</Link>
+                <Link className='link' to="/admin">Admin</Link>
+            </div>
         </div>
     )
 }
