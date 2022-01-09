@@ -41,9 +41,77 @@
   cursor: pointer;
 }
 
-.App .products img {
+.App .products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 94vh;
+}
+
+.App .products .food {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #b6b8d4;
+}
+
+.App .products .food img {
   width: 300px;
   height: 200px;
-  margin-right: 10px;
+  border-radius: 7px;
+}
+
+.App .products .food .stars {
+  padding: 5px 0px;
+}
+
+.App .products .food .stars i {
+  color: yellow;
+  font-size: 20px;
+}
+
+.App .products .food .food_name {
+  font-weight: 200;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.App .products .food .event {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .products .food .event button {
+  background-color: #0b0baa;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App .products .food .event button:hover {
+  background-color: #3333b1;
+}
+
+.App .products .food .event .food_price {
+  font-size: 20px;
 }
 /*# sourceMappingURL=App.css.map */

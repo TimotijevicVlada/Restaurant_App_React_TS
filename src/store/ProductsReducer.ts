@@ -2,7 +2,9 @@ import {products} from "../data";
 
 export type ProductsProps = {
     products: {
+        name: string
         url: string
+        price: number
     }[]
 }
 
