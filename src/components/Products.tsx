@@ -1,16 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { ProductsProps } from '../store/ProductsReducer';
+import {useContext} from 'react';
+import { ProductsContext } from '../context/Context';
+
+
 
 const Products = () => {
 
+    const {food} = useContext(ProductsContext);
 
-    const products = useSelector<ProductsProps, ProductsProps["products"]>(state => state.products);
-    console.log(products);
 
     return (
         <div className='products'>
-            {products.map((item, index) => (
+            {food.map((item, index) => (
                 <div key={index} className='food'>
                     <img  src={item.url} alt="slika" className='food_img'/>
                     <div className='stars'>
