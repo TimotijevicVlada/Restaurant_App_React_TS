@@ -44,7 +44,7 @@
             margin: 5px;
             padding: 10px;
             border-radius: 10px;
-            background-color: rgb(182, 184, 212);
+            background-color: rgb(231, 232, 241);
             img {
                 width: 300px;
                 height: 200px;
@@ -83,4 +83,39 @@
         }
 
     }
+    .cart {
+        display: flex;
+        .cart_items {
+            flex: 9;
+            .cart_item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid gray;
+                margin-bottom: 5px;
+                img {
+                    width: 200px;
+                }
+                .quantity {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    i {
+                        cursor: pointer;
+                    }
+                }
+                .delete {
+                    background-color: red;
+                    border: none;
+                    padding: 5px 10px;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+        .cart_total {
+            flex: 3;
+        }
+    }
+
 }

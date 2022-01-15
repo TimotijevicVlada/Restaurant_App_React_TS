@@ -8,7 +8,6 @@ export type FoodProps = {
     quantity: number
 }
 
-
 type ProductsProps = {
     food: FoodProps[]
     cart: FoodProps[]

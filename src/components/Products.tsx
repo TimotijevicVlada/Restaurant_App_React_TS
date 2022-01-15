@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../context/Context';
-import {FoodProps} from "../context/Context";
+import { FoodProps } from "../context/Context";
 
 
 const Products = () => {
@@ -8,9 +8,15 @@ const Products = () => {
     const { food, cart, setCart } = useContext(ProductsContext);
 
     const addToCart = (item: FoodProps) => {
-        setCart([ ...cart, { ...item }])
+        const exist = cart.find(elem => elem.name === item.name);
+        if (exist) {
+            setCart(cart.map(elem => elem.name === item.name ?
+                { ...exist, quantity: exist.quantity + 1 } : elem
+            ))
+        } else {
+            setCart([...cart, { ...item }])
+        }
     }
-
 
     return (
         <div className='products'>
