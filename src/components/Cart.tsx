@@ -4,7 +4,7 @@ import { FoodProps } from '../context/Context';
 
 const Cart = () => {
 
-    const { cart, setCart } = useContext(ProductsContext);
+    const { cart, setCart, totalPrice, totalQuantity } = useContext(ProductsContext);
 
     const handleDelete = (item: FoodProps) => {
         const deleted = cart.filter(elem => elem.name !== item.name);
@@ -30,6 +30,7 @@ const Cart = () => {
                     <div className='cart_item' key={index}>
                         <img className='item_img' src={item.url} alt={item.name} />
                         <span className='item_name'>{item.name}</span>
+                        <span className='item_price'>${item.price}</span>
                         <div className='quantity'>
                             <i onClick={() => handleIncrease(item)} className='fas fa-chevron-up'></i>
                             <span>{item.quantity}</span>
@@ -40,7 +41,12 @@ const Cart = () => {
                 ))}
             </div>
             <div className='cart_total'>
-                Cart Total
+                <h2 className='total_title'>Summary</h2>
+                <div className='total_info'>
+                    <div className='total_products'>Total products: <span>{totalQuantity}</span></div>
+                    <div className='total_price'>Total price: <span>${totalPrice}</span></div> 
+                    <button className='order_btn'>ORDER</button>
+                </div>
             </div>
         </div>
     )

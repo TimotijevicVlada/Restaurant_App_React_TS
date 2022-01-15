@@ -11,7 +11,7 @@ const Products = () => {
         const exist = cart.find(elem => elem.name === item.name);
         if (exist) {
             setCart(cart.map(elem => elem.name === item.name ?
-                { ...exist, quantity: exist.quantity + 1 } : elem
+                { ...exist, quantity:exist.quantity === 10 ? 10 : exist.quantity + 1 } : elem
             ))
         } else {
             setCart([...cart, { ...item }])

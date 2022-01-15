@@ -37,8 +37,33 @@
 .App .navbar .menu .link {
   color: inherit;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 15px;
   cursor: pointer;
+}
+
+.App .navbar .menu .cart {
+  position: relative;
+}
+
+.App .navbar .menu .cart .total_quantity {
+  position: absolute;
+  right: -12px;
+  top: -8px;
+  background-color: crimson;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .App .products {
@@ -141,8 +166,18 @@
   margin-bottom: 5px;
 }
 
-.App .cart .cart_items .cart_item img {
+.App .cart .cart_items .cart_item .item_img {
   width: 200px;
+}
+
+.App .cart .cart_items .cart_item .item_name {
+  font-size: 20px;
+  width: 20%;
+}
+
+.App .cart .cart_items .cart_item .item_price {
+  font-size: 22px;
+  width: 10%;
 }
 
 .App .cart .cart_items .cart_item .quantity {
@@ -163,7 +198,7 @@
 }
 
 .App .cart .cart_items .cart_item .delete {
-  background-color: red;
+  background-color: crimson;
   border: none;
   padding: 5px 10px;
   color: white;
@@ -178,5 +213,49 @@
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
+  padding: 0px 10px;
+}
+
+.App .cart .cart_total .total_title {
+  text-align: center;
+  font-weight: 200;
+}
+
+.App .cart .cart_total .total_info {
+  background-color: crimson;
+  padding: 10px;
+  text-align: center;
+}
+
+.App .cart .cart_total .total_info .total_products {
+  color: white;
+  font-size: 18px;
+  margin-top: 100px;
+}
+
+.App .cart .cart_total .total_info .total_products span {
+  font-size: 22px;
+}
+
+.App .cart .cart_total .total_info .total_price {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.App .cart .cart_total .total_info .total_price span {
+  font-size: 22px;
+}
+
+.App .cart .cart_total .total_info .order_btn {
+  width: 100%;
+  font-size: 20px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.App .cart .cart_total .total_info .order_btn:hover {
+  background-color: white;
 }
 /*# sourceMappingURL=App.css.map */

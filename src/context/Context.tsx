@@ -12,6 +12,8 @@ type ProductsProps = {
     food: FoodProps[]
     cart: FoodProps[]
     setCart: React.Dispatch<React.SetStateAction<FoodProps[]>>
+    totalQuantity: number
+    totalPrice: number
 }
 
 type ProductsContextProviderProps = {
@@ -24,6 +26,34 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
 
     const [food, setFood] = useState<FoodProps[]>(products);
     const [cart, setCart] = useState<FoodProps[]>([]);
+    const [totalQuantity, setTotalQuantity] = useState<number>(0);
+    const [totalPrice, setTotalPrice] = useState<number>(0);
+
+    //Print total quantity
+    const printTotalQunatity = () => {
+        let total = 0;
+        cart.map(item => {
+            return (total += item.quantity)
+        })
+        setTotalQuantity(total);
+    }
+
+    useEffect(() => {
+        printTotalQunatity();
+    }, [cart])
+
+    //Print total price
+    const printTotalPrice = () => {
+        let total = 0;
+        cart.map(item => {
+            return (total += item.quantity * item.price);
+        })
+        setTotalPrice(total);
+    }
+
+    useEffect(() => {
+        printTotalPrice();
+    }, [cart])
 
     //Function that get cart food
     const getFoodStorage = () => {
@@ -48,7 +78,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     }, [saveFoodStorage])
 
     return (
-        <ProductsContext.Provider value={{ food, cart, setCart }}>
+        <ProductsContext.Provider value={{ food, cart, setCart, totalQuantity, totalPrice }}>
             {children}
         </ProductsContext.Provider>
     )
