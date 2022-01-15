@@ -1,9 +1,19 @@
-import React from 'react'
+import {useContext} from 'react';
+import { ProductsContext } from '../context/Context';
 
 const Cart = () => {
+
+    const {cart} = useContext(ProductsContext);
+
+    
+
     return (
         <div>
-            CART
+            {cart.map((item, index) => (
+                <div key={index}>
+                    <img src={item.url} alt={item.name} />
+                </div>
+            ))}
         </div>
     )
 }
