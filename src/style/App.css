@@ -170,6 +170,10 @@
   cursor: pointer;
 }
 
+.App .cart .cart_items .cart_item .delete:hover {
+  background-color: #db0909;
+}
+
 .App .cart .cart_total {
   -webkit-box-flex: 3;
       -ms-flex: 3;

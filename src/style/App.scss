@@ -110,6 +110,9 @@
                     padding: 5px 10px;
                     color: white;
                     cursor: pointer;
+                    &:hover {
+                        background-color: rgb(219, 9, 9);
+                    }
                 }
             }
         }
