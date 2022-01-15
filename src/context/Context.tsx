@@ -31,10 +31,9 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
 
     //Print total quantity
     const printTotalQunatity = () => {
-        let total = 0;
-        cart.map(item => {
-            return (total += item.quantity)
-        })
+        const total = cart.reduce((accumulation, currentValue) => {
+            return accumulation + currentValue.quantity;
+        }, 0)
         setTotalQuantity(total);
     }
 
@@ -44,10 +43,9 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
 
     //Print total price
     const printTotalPrice = () => {
-        let total = 0;
-        cart.map(item => {
-            return (total += item.quantity * item.price);
-        })
+        const total = cart.reduce((accumulation, currentValue) => {
+            return accumulation + (currentValue.price * currentValue.quantity);
+        }, 0)
         setTotalPrice(total);
     }
 

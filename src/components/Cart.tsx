@@ -43,9 +43,10 @@ const Cart = () => {
             <div className='cart_total'>
                 <h2 className='total_title'>Summary</h2>
                 <div className='total_info'>
+                    <span onClick={() => setCart([])} className='delete_all'>DELETE ALL!</span>
                     <div className='total_products'>Total products: <span>{totalQuantity}</span></div>
                     <div className='total_price'>Total price: <span>${totalPrice}</span></div> 
-                    <button className='order_btn'>ORDER</button>
+                    <button onClick={() => alert("Thank's for buying our food!")} className='order_btn'>ORDER</button>
                 </div>
             </div>
         </div>

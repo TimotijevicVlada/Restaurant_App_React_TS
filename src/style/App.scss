@@ -151,6 +151,18 @@
         background-color: crimson;
         padding: 10px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        .delete_all {
+          align-self: flex-end;
+          background-color: whitesmoke;
+          font-size: 14px;
+          padding: 5px;
+          cursor: pointer;
+          &:hover {
+            background-color: white;
+          }
+        }
         .total_products {
           color: white;
           font-size: 18px;
