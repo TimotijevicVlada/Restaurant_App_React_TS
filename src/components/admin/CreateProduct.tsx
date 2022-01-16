@@ -1,21 +1,71 @@
-import React from 'react';
+import { useContext, useState } from 'react';
+import { useFormik } from "formik";
+import { ProductsContext } from '../../context/Context';
+import { FoodProps } from '../../context/Context';
 
 const CreateProduct = () => {
+
+    const { food, setFood } = useContext(ProductsContext);
+    const [successMessage, setSuccessMessage] = useState<boolean>(false);
+
+
+    //Formik library
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            url: "",
+            price: 0,
+            quantity: 1
+        },
+        //validate,
+        onSubmit: (values: FoodProps) => {
+            setFood([
+                ...food,
+                {
+                    name: values.name,
+                    url: values.url,
+                    price: values.price,
+                    quantity: values.quantity
+                }
+            ])
+            setSuccessMessage(true);
+        },
+    });
+
     return (
-        <form className='create'>
+        <form onSubmit={formik.handleSubmit} className='create'>
             <h2 className='title'>Create your new product</h2>
             <div>
-                <input type="text" placeholder='Product name'/>
+                <input
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.name}
+                    type="text"
+                    name='name'
+                    placeholder='Product name' />
             </div>
             <div>
-                <input type="text" placeholder='Product url'/>
+                <input
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.url}
+                    type="text"
+                    name='url'
+                    placeholder='Product url' />
             </div>
             <div>
-                <input type="text" placeholder='Product price'/>
+                <input
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.price}
+                    type="text"
+                    name='price'
+                    placeholder='Product price' />
             </div>
             <div className='button'>
-                <button>Create</button>
+                <button type='submit'>Create</button>
             </div>
+            {successMessage && <span className='success_msg'>Product has been created!</span>}
         </form>
     )
 }

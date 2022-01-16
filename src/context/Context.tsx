@@ -76,6 +76,28 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
         saveFoodStorage();
     }, [saveFoodStorage])
 
+    //Function that get food
+    const getStorage = () => {
+        if (localStorage.getItem("restaurantFood") === null) {
+            localStorage.setItem("restaurantFood", JSON.stringify([]));
+        } else {
+            const foodStorage = JSON.parse(localStorage.getItem("restaurantFood") || "");
+            setFood(foodStorage);
+        }
+    }
+    useEffect(() => {
+        getStorage();
+    }, [])
+
+    //Function that save food to local storage
+    const saveStorage = useCallback(() => {
+        localStorage.setItem("restaurantFood", JSON.stringify(food));
+    }, [food])
+
+    useEffect(() => {
+        saveStorage();
+    }, [saveStorage])
+
     return (
         <ProductsContext.Provider value={{ food, setFood, cart, setCart, totalQuantity, totalPrice }}>
             {children}

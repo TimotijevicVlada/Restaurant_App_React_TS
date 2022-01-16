@@ -103,6 +103,7 @@
     .cart_items {
       flex: 9;
       min-height: 86vh;
+      padding: 10px;
       .cart_item {
         display: flex;
         justify-content: space-between;
@@ -286,6 +287,10 @@
             background-color: rgb(49, 160, 49);
           }
         }
+      }
+      .success_msg {
+        color: green;
+        font-weight: bold;
       }
     }
   }

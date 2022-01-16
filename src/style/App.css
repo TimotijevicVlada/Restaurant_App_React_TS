@@ -151,6 +151,7 @@
       -ms-flex: 9;
           flex: 9;
   min-height: 86vh;
+  padding: 10px;
 }
 
 .App .cart .cart_items .cart_item {
@@ -409,6 +410,11 @@
 
 .App .admin .create .button button:hover {
   background-color: #31a031;
+}
+
+.App .admin .create .success_msg {
+  color: green;
+  font-weight: bold;
 }
 
 .App .footer {
