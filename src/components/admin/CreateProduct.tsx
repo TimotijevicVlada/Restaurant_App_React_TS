@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { useFormik } from "formik";
 import { ProductsContext } from '../../context/Context';
 import { FoodProps } from '../../context/Context';
+import { validate } from '../../validation/Validation';
 
 const CreateProduct = () => {
 
@@ -17,8 +18,8 @@ const CreateProduct = () => {
             price: 0,
             quantity: 1
         },
-        //validate,
-        onSubmit: (values: FoodProps) => {
+        validate,
+        onSubmit: (values) => {
             setFood([
                 ...food,
                 {
@@ -44,6 +45,9 @@ const CreateProduct = () => {
                     name='name'
                     placeholder='Product name' />
             </div>
+            {formik.touched.name && formik.errors.name && (
+                <div className="error">{formik.errors.name}</div>
+            )}
             <div>
                 <input
                     onChange={formik.handleChange}
@@ -53,6 +57,9 @@ const CreateProduct = () => {
                     name='url'
                     placeholder='Product url' />
             </div>
+            {formik.touched.url && formik.errors.url && (
+                <div className="error">{formik.errors.url}</div>
+            )}
             <div>
                 <input
                     onChange={formik.handleChange}
@@ -62,6 +69,9 @@ const CreateProduct = () => {
                     name='price'
                     placeholder='Product price' />
             </div>
+            {formik.touched.price && formik.errors.price && (
+                <div className="error">{formik.errors.price}</div>
+            )}
             <div className='button'>
                 <button type='submit'>Create</button>
             </div>
