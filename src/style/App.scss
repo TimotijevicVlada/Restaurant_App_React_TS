@@ -12,7 +12,6 @@
     align-items: center;
     height: 7vh;
     background-color: rgb(224, 224, 224);
-
     .logo {
       font-size: 22px;
 
@@ -54,7 +53,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 94vh;
+    min-height: 86vh;
     .food {
       display: flex;
       flex-direction: column;
@@ -103,6 +102,7 @@
     display: flex;
     .cart_items {
       flex: 9;
+      min-height: 86vh;
       .cart_item {
         display: flex;
         justify-content: space-between;
@@ -191,5 +191,37 @@
         }
       }
     }
+  }
+  .admin {
+    display: flex;
+    min-height: 86vh;
+    .aside_menu {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      background-color: whitesmoke;
+      .link {
+        color: inherit;
+        text-align: center;
+        text-decoration: none;
+        border-bottom: 1px solid lightgray;
+        padding: 15px 0px;
+        font-size: 18px;
+        &:hover {
+          background-color: rgb(224, 224, 224);
+        }
+      }
+    }
+    .create, .all_products {
+      flex: 9;
+      padding: 20px;
+    }
+  }
+  .footer {
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 224, 224);
   }
 }

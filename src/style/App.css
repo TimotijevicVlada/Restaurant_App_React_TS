@@ -76,7 +76,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 94vh;
+  min-height: 86vh;
 }
 
 .App .products .food {
@@ -150,6 +150,7 @@
   -webkit-box-flex: 9;
       -ms-flex: 9;
           flex: 9;
+  min-height: 86vh;
 }
 
 .App .cart .cart_items .cart_item {
@@ -277,5 +278,60 @@
 
 .App .cart .cart_total .total_info .order_btn:hover {
   background-color: white;
+}
+
+.App .admin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 86vh;
+}
+
+.App .admin .aside_menu {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: whitesmoke;
+}
+
+.App .admin .aside_menu .link {
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 1px solid lightgray;
+  padding: 15px 0px;
+  font-size: 18px;
+}
+
+.App .admin .aside_menu .link:hover {
+  background-color: #e0e0e0;
+}
+
+.App .admin .create, .App .admin .all_products {
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+  padding: 20px;
+}
+
+.App .footer {
+  height: 7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e0e0e0;
 }
 /*# sourceMappingURL=App.css.map */
