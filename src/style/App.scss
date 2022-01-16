@@ -30,21 +30,21 @@
         cursor: pointer;
       }
       .cart {
-          position: relative;
-          .total_quantity {
-              position: absolute;
-              right: -12px;
-              top: -8px;
-              background-color: crimson;
-              color: white;
-              font-size: 12px;
-              border-radius: 50%;
-              width: 20px;
-              height: 20px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-          }
+        position: relative;
+        .total_quantity {
+          position: absolute;
+          right: -12px;
+          top: -8px;
+          background-color: crimson;
+          color: white;
+          font-size: 12px;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }
@@ -212,7 +212,43 @@
         }
       }
     }
-    .create, .all_products {
+    .all_products {
+      flex: 9;
+      padding: 20px;
+      .product {
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .product_img {
+          width: 30%;
+          img {
+            width: 130px;
+          }
+        }
+        .product_name {
+          font-size: 20px;
+          width: 20%;
+        }
+        .product_price {
+          font-size: 22px;
+          width: 10%;
+          color: green;
+        }
+        .details {
+          background-color: blue;
+          color: white;
+          border: none;
+          padding: 5px 10px;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(59, 59, 241);
+          }
+        }
+      }
+    }
+    .create {
       flex: 9;
       padding: 20px;
     }
@@ -223,5 +259,10 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(224, 224, 224);
+    span {
+      color: crimson;
+      text-indent: 7px;
+      font-weight: bold;
+    }
   }
 }
