@@ -215,6 +215,11 @@
     .all_products {
       flex: 9;
       padding: 20px;
+      .title {
+        text-align: center;
+        font-weight: 200;
+        padding: 10px 0px;
+      }
       .product {
         border-bottom: 1px solid lightgray;
         margin-bottom: 5px;
@@ -251,6 +256,37 @@
     .create {
       flex: 9;
       padding: 20px;
+      .title {
+        text-align: center;
+        font-weight: 200;
+        padding: 10px 0px;
+      }
+      div {
+        input {
+          width: 100%;
+          border: none;
+          border-bottom: 1px solid lightgray;
+          font-size: 18px;
+          padding: 10px;
+          margin-bottom: 15px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .button {
+        button {
+          border: none;
+          padding: 7px 40px;
+          font-size: 18px;
+          background-color: green;
+          color: white;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(49, 160, 49);
+          }
+        }
+      }
     }
   }
   .footer {

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ProductsContext } from '../context/Context';
+import { ProductsContext } from '../../context/Context';
 
 
 const AdminAllProducts = () => {
@@ -9,6 +9,7 @@ const AdminAllProducts = () => {
 
     return (
         <div className='all_products'>
+            <h2 className='title'>All of your products</h2>
             {food.map((item, index) => (
                 <div className='product' key={index}>
                     <div className='product_img'>

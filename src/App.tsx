@@ -2,9 +2,9 @@ import './style/App.css';
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import Cart from './components/Cart';
-import Admin from './components/Admin';
-import CreateProduct from './components/CreateProduct';
-import AdminAllProducts from './components/AdminAllProducts';
+import Admin from './components/admin/Admin';
+import CreateProduct from './components/admin/CreateProduct';
+import AdminAllProducts from './components/admin/AdminAllProducts';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer';
 
