@@ -11,7 +11,7 @@ const Products = () => {
         const exist = cart.find(elem => elem.name === item.name);
         if (exist) {
             setCart(cart.map(elem => elem.name === item.name ?
-                { ...exist, quantity:exist.quantity === 10 ? 10 : exist.quantity + 1 } : elem
+                { ...exist, quantity: exist.quantity === 10 ? 10 : exist.quantity + 1 } : elem
             ))
         } else {
             setCart([...cart, { ...item }])
@@ -20,23 +20,26 @@ const Products = () => {
 
     return (
         <div className='products'>
-            {food.map((item, index) => (
-                <div key={index} className='food'>
-                    <img src={item.url} alt="slika" className='food_img' />
-                    <div className='stars'>
-                        <i className='fas fa-star'></i>
-                        <i className='fas fa-star'></i>
-                        <i className='fas fa-star'></i>
-                        <i className='fas fa-star'></i>
-                        <i className='fas fa-star-half-alt'></i>
+            <div className='products_wrapper'>
+                {food.map((item, index) => (
+                    <div key={index} className='food'>
+                        <img src={item.url} alt="slika" className='food_img' />
+                        <div className='stars'>
+                            <i className='fas fa-star'></i>
+                            <i className='fas fa-star'></i>
+                            <i className='fas fa-star'></i>
+                            <i className='fas fa-star'></i>
+                            <i className='fas fa-star-half-alt'></i>
+                        </div>
+                        <h3 className='food_name'>{item.name}</h3>
+                        <div className='event'>
+                            <button onClick={() => addToCart(item)}>Add to cart</button>
+                            <span className='food_price'>${item.price}</span>
+                        </div>
                     </div>
-                    <h3 className='food_name'>{item.name}</h3>
-                    <div className='event'>
-                        <button onClick={() => addToCart(item)}>Add to cart</button>
-                        <span className='food_price'>${item.price}</span>
-                    </div>
-                </div>
-            ))}
+                ))}
+            </div>
+
         </div>
     )
 }

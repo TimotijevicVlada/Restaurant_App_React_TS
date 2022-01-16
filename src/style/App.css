@@ -79,7 +79,17 @@
   min-height: 86vh;
 }
 
-.App .products .food {
+.App .products .products_wrapper {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  margin: 10px 0px;
+}
+
+.App .products .products_wrapper .food {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,28 +103,28 @@
   background-color: #e7e8f1;
 }
 
-.App .products .food img {
+.App .products .products_wrapper .food img {
   width: 300px;
   height: 200px;
   border-radius: 7px;
 }
 
-.App .products .food .stars {
+.App .products .products_wrapper .food .stars {
   padding: 5px 0px;
 }
 
-.App .products .food .stars i {
+.App .products .products_wrapper .food .stars i {
   color: yellow;
   font-size: 20px;
 }
 
-.App .products .food .food_name {
+.App .products .products_wrapper .food .food_name {
   font-weight: 200;
   text-align: center;
   padding: 10px 0px;
 }
 
-.App .products .food .event {
+.App .products .products_wrapper .food .event {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,7 +133,7 @@
           justify-content: space-between;
 }
 
-.App .products .food .event button {
+.App .products .products_wrapper .food .event button {
   background-color: #0b0baa;
   color: white;
   border: none;
@@ -132,11 +142,11 @@
   cursor: pointer;
 }
 
-.App .products .food .event button:hover {
+.App .products .products_wrapper .food .event button:hover {
   background-color: #3333b1;
 }
 
-.App .products .food .event .food_price {
+.App .products .products_wrapper .food .event .food_price {
   font-size: 20px;
 }
 
