@@ -249,19 +249,31 @@
           width: 10%;
           color: green;
         }
-        .details {
-          background-color: blue;
-          color: white;
-          border: none;
-          padding: 5px 10px;
-          cursor: pointer;
-          &:hover {
-            background-color: rgb(59, 59, 241);
+        .details_section {
+          .details,
+          .update {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+            &:hover {
+              background-color: rgb(59, 59, 241);
+            }
+          }
+          .update {
+            background-color: orange;
+            text-decoration: none;
+            &:hover {
+              background-color: rgb(248, 188, 76);
+            }
           }
         }
       }
     }
-    .create {
+    .create, .update {
       flex: 9;
       padding: 20px;
       .title {
@@ -270,6 +282,9 @@
         padding: 10px 0px;
       }
       div {
+        label {
+          padding: 10px;
+        }
         input {
           width: 100%;
           border: none;
@@ -298,10 +313,20 @@
             background-color: rgb(49, 160, 49);
           }
         }
+        .update_btn {
+          background-color: orange;
+          &:hover {
+            background-color: rgb(250, 183, 59);
+          }
+        }
       }
       .success_msg {
         color: green;
         font-weight: bold;
+        padding: 20px 0px;
+      }
+      .update_msg {
+        color: orange;
       }
     }
   }

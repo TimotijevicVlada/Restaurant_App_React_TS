@@ -371,32 +371,49 @@
   color: green;
 }
 
-.App .admin .all_products .product .details {
+.App .admin .all_products .product .details_section .details,
+.App .admin .all_products .product .details_section .update {
   background-color: blue;
   color: white;
   border: none;
   padding: 5px 10px;
+  font-size: 16px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
-.App .admin .all_products .product .details:hover {
+.App .admin .all_products .product .details_section .details:hover,
+.App .admin .all_products .product .details_section .update:hover {
   background-color: #3b3bf1;
 }
 
-.App .admin .create {
+.App .admin .all_products .product .details_section .update {
+  background-color: orange;
+  text-decoration: none;
+}
+
+.App .admin .all_products .product .details_section .update:hover {
+  background-color: #f8bc4c;
+}
+
+.App .admin .create, .App .admin .update {
   -webkit-box-flex: 9;
       -ms-flex: 9;
           flex: 9;
   padding: 20px;
 }
 
-.App .admin .create .title {
+.App .admin .create .title, .App .admin .update .title {
   text-align: center;
   font-weight: 200;
   padding: 10px 0px;
 }
 
-.App .admin .create div input {
+.App .admin .create div label, .App .admin .update div label {
+  padding: 10px;
+}
+
+.App .admin .create div input, .App .admin .update div input {
   width: 100%;
   border: none;
   border-bottom: 1px solid lightgray;
@@ -405,16 +422,16 @@
   margin-bottom: 15px;
 }
 
-.App .admin .create div input:focus {
+.App .admin .create div input:focus, .App .admin .update div input:focus {
   outline: none;
 }
 
-.App .admin .create .error {
+.App .admin .create .error, .App .admin .update .error {
   color: red;
   margin-bottom: 10px;
 }
 
-.App .admin .create .button button {
+.App .admin .create .button button, .App .admin .update .button button {
   border: none;
   padding: 7px 40px;
   font-size: 18px;
@@ -423,13 +440,26 @@
   cursor: pointer;
 }
 
-.App .admin .create .button button:hover {
+.App .admin .create .button button:hover, .App .admin .update .button button:hover {
   background-color: #31a031;
 }
 
-.App .admin .create .success_msg {
+.App .admin .create .button .update_btn, .App .admin .update .button .update_btn {
+  background-color: orange;
+}
+
+.App .admin .create .button .update_btn:hover, .App .admin .update .button .update_btn:hover {
+  background-color: #fab73b;
+}
+
+.App .admin .create .success_msg, .App .admin .update .success_msg {
   color: green;
   font-weight: bold;
+  padding: 20px 0px;
+}
+
+.App .admin .create .update_msg, .App .admin .update .update_msg {
+  color: orange;
 }
 
 .App .footer {

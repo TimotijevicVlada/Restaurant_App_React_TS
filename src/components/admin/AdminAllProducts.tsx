@@ -1,11 +1,17 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../../context/Context';
+import { FoodProps } from '../../context/Context';
+import { Link } from 'react-router-dom';
 
 
 const AdminAllProducts = () => {
 
-    const {food} = useContext(ProductsContext);
+    const {food, setProductToUpdate} = useContext(ProductsContext);
 
+    const handleUpdate = (item: FoodProps) => {
+        const itemToUpdate = food.filter(elem => elem.name === item.name);
+        setProductToUpdate(itemToUpdate);
+    }
 
     return (
         <div className='all_products'>
@@ -17,7 +23,10 @@ const AdminAllProducts = () => {
                     </div>
                     <span className='product_name'>{item.name}</span>
                     <span className='product_price'>${item.price}</span>
-                    <button className='details'>Details</button>
+                    <div className='details_section'>
+                        <Link to="/admin/update" onClick={() => handleUpdate(item)} className='update'>Update</Link>
+                        <button className='details'>Details</button>
+                    </div>
                 </div>
             ))}
         </div>

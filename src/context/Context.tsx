@@ -11,10 +11,12 @@ export type FoodProps = {
 type ProductsProps = {
     food: FoodProps[]
     cart: FoodProps[]
+    productToUpdate: FoodProps[]
     totalQuantity: number
     totalPrice: number
     setCart: React.Dispatch<React.SetStateAction<FoodProps[]>>
     setFood: React.Dispatch<React.SetStateAction<FoodProps[]>>
+    setProductToUpdate: React.Dispatch<React.SetStateAction<FoodProps[]>>
 }
 
 type ProductsContextProviderProps = {
@@ -29,6 +31,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const [cart, setCart] = useState<FoodProps[]>([]);
     const [totalQuantity, setTotalQuantity] = useState<number>(0);
     const [totalPrice, setTotalPrice] = useState<number>(0);
+    const [productToUpdate, setProductToUpdate] = useState<FoodProps[]>([]);
 
     //Print total quantity
     const printTotalQunatity = () => {
@@ -99,7 +102,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     }, [saveStorage])
 
     return (
-        <ProductsContext.Provider value={{ food, setFood, cart, setCart, totalQuantity, totalPrice }}>
+        <ProductsContext.Provider value={{ food, setFood, cart, setCart, totalQuantity, totalPrice, productToUpdate, setProductToUpdate }}>
             {children}
         </ProductsContext.Provider>
     )
