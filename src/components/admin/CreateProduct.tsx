@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { useFormik } from "formik";
 import { ProductsContext } from '../../context/Context';
-import { FoodProps } from '../../context/Context';
 import { validate } from '../../validation/Validation';
 
 const CreateProduct = () => {

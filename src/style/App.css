@@ -396,6 +396,10 @@
   background-color: #f8bc4c;
 }
 
+.App .admin .all_products .product .details_section .details {
+  text-decoration: none;
+}
+
 .App .admin .all_products .product .details_section .delete {
   background-color: red;
 }
@@ -468,6 +472,45 @@
 
 .App .admin .create .update_msg, .App .admin .update .update_msg {
   color: orange;
+}
+
+.App .admin .details_page {
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .admin .details_page .details_image {
+  width: 50%;
+}
+
+.App .admin .details_page .details_image img {
+  width: 100%;
+}
+
+.App .admin .details_page .details_info {
+  width: 50%;
+  padding: 0px 20px;
+}
+
+.App .admin .details_page .details_info h2 {
+  text-align: center;
+  font-weight: 200;
+}
+
+.App .admin .details_page .details_info .details_price {
+  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
 }
 
 .App .footer {
