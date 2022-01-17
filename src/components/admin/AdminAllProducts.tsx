@@ -6,11 +6,16 @@ import { Link } from 'react-router-dom';
 
 const AdminAllProducts = () => {
 
-    const {food, setProductToUpdate} = useContext(ProductsContext);
+    const {food, setFood, setProductToUpdate} = useContext(ProductsContext);
 
     const handleUpdate = (item: FoodProps) => {
         const itemToUpdate = food.filter(elem => elem.name === item.name);
         setProductToUpdate(itemToUpdate);
+    }
+
+    const handleDelete = (item: FoodProps) => {
+        const deleted = food.filter(elem => elem.name !== item.name);
+        setFood(deleted);
     }
 
     return (
@@ -26,6 +31,7 @@ const AdminAllProducts = () => {
                     <div className='details_section'>
                         <Link to="/admin/update" onClick={() => handleUpdate(item)} className='update'>Update</Link>
                         <button className='details'>Details</button>
+                        <button onClick={() => handleDelete(item)} className='delete'>Delete</button>
                     </div>
                 </div>
             ))}

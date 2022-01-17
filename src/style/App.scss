@@ -251,7 +251,7 @@
         }
         .details_section {
           .details,
-          .update {
+          .update, .delete {
             background-color: blue;
             color: white;
             border: none;
@@ -268,6 +268,12 @@
             text-decoration: none;
             &:hover {
               background-color: rgb(248, 188, 76);
+            }
+          }
+          .delete {
+            background-color: red;
+            &:hover {
+              background-color: rgb(253, 62, 62);
             }
           }
         }

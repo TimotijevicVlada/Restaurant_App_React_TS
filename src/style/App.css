@@ -372,7 +372,7 @@
 }
 
 .App .admin .all_products .product .details_section .details,
-.App .admin .all_products .product .details_section .update {
+.App .admin .all_products .product .details_section .update, .App .admin .all_products .product .details_section .delete {
   background-color: blue;
   color: white;
   border: none;
@@ -383,7 +383,7 @@
 }
 
 .App .admin .all_products .product .details_section .details:hover,
-.App .admin .all_products .product .details_section .update:hover {
+.App .admin .all_products .product .details_section .update:hover, .App .admin .all_products .product .details_section .delete:hover {
   background-color: #3b3bf1;
 }
 
@@ -394,6 +394,14 @@
 
 .App .admin .all_products .product .details_section .update:hover {
   background-color: #f8bc4c;
+}
+
+.App .admin .all_products .product .details_section .delete {
+  background-color: red;
+}
+
+.App .admin .all_products .product .details_section .delete:hover {
+  background-color: #fd3e3e;
 }
 
 .App .admin .create, .App .admin .update {

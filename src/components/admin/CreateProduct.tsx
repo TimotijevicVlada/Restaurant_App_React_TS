@@ -28,7 +28,7 @@ const CreateProduct = () => {
                     price: values.price,
                     quantity: values.quantity
                 }
-            ])
+            ].reverse())
             setSuccessMessage(true);
         },
     });
