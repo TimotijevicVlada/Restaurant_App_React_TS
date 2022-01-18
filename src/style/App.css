@@ -408,6 +408,72 @@
   background-color: #fd3e3e;
 }
 
+.App .admin .all_products .delete_wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .admin .all_products .delete_wrapper .delete {
+  background-color: lightgray;
+  padding: 20px;
+  width: 600px;
+}
+
+.App .admin .all_products .delete_wrapper .delete .delete_question {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.App .admin .all_products .delete_wrapper .delete .delete_events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .admin .all_products .delete_wrapper .delete .delete_events button {
+  width: 80px;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.App .admin .all_products .delete_wrapper .delete .delete_events .delete_cancel {
+  background-color: orange;
+}
+
+.App .admin .all_products .delete_wrapper .delete .delete_events .delete_cancel:hover {
+  background-color: #fcb93e;
+}
+
+.App .admin .all_products .delete_wrapper .delete .delete_events .delete_ok {
+  background-color: red;
+  margin-left: 10px;
+}
+
+.App .admin .all_products .delete_wrapper .delete .delete_events .delete_ok:hover {
+  background-color: #fc3131;
+}
+
 .App .admin .create, .App .admin .update {
   -webkit-box-flex: 9;
       -ms-flex: 9;

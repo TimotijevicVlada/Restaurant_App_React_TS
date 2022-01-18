@@ -15,7 +15,7 @@ const Navbar = () => {
             </div>
             <div className='menu'>
                 <Link className='link' to="/">Home</Link>
-                <Link className='link cart' to="/cart">Cart {totalQuantity > 0 && <span className='total_quantity'>{totalQuantity}</span>} </Link>
+                <Link className='link cart' to="/cart">Cart {totalQuantity && <span className='total_quantity'>{totalQuantity}</span>} </Link>
                 <Link className='link' to="/admin">Admin</Link>
             </div>
         </div>

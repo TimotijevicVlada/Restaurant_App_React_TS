@@ -15,9 +15,13 @@ type ProductsProps = {
     food: FoodProps[]
     cart: FoodProps[]
     productToUpdate: FoodProps[]
-    totalQuantity: number
+    totalQuantity: number | null
     totalPrice: number
     adminDetails: FoodProps[]
+    deleteVisible: boolean
+    itemToDelete: number | null
+    setItemToDelete: React.Dispatch<React.SetStateAction<number | null>>
+    setDeleteVisible: React.Dispatch<React.SetStateAction<boolean>>
     setAdminDetails: React.Dispatch<React.SetStateAction<FoodProps[]>>
     setCart: React.Dispatch<React.SetStateAction<FoodProps[]>>
     setFood: React.Dispatch<React.SetStateAction<FoodProps[]>>
@@ -34,10 +38,12 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
 
     const [food, setFood] = useState<FoodProps[]>(products);
     const [cart, setCart] = useState<FoodProps[]>([]);
-    const [totalQuantity, setTotalQuantity] = useState<number>(0);
+    const [totalQuantity, setTotalQuantity] = useState<number | null>(null);
     const [totalPrice, setTotalPrice] = useState<number>(0);
     const [productToUpdate, setProductToUpdate] = useState<FoodProps[]>([]);
     const [adminDetails, setAdminDetails] = useState<FoodProps[]>([]);
+    const [deleteVisible, setDeleteVisible] = useState(false);
+    const [itemToDelete, setItemToDelete] = useState<number | null>(null);
 
     //Print total quantity
     const printTotalQunatity = () => {
@@ -118,7 +124,11 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             productToUpdate,
             setProductToUpdate,
             adminDetails,
-            setAdminDetails
+            setAdminDetails,
+            deleteVisible, 
+            setDeleteVisible,
+            itemToDelete, 
+            setItemToDelete
         }}>
             {children}
         </ProductsContext.Provider>

@@ -2,25 +2,27 @@ import { useContext } from 'react';
 import { ProductsContext } from '../../context/Context';
 import { FoodProps } from '../../context/Context';
 import { Link } from 'react-router-dom';
+import DeleteWindow from './DeleteWindow';
 
 
 const AdminAllProducts = () => {
 
-    const { food, setFood, setAdminDetails, setProductToUpdate } = useContext(ProductsContext);
+    const { food, deleteVisible, setDeleteVisible, setItemToDelete, setAdminDetails, setProductToUpdate } = useContext(ProductsContext);
+    
 
     const handleUpdate = (item: FoodProps) => {
         const itemToUpdate = food.filter(elem => elem.id === item.id);
         setProductToUpdate(itemToUpdate);
     }
 
-    const handleDelete = (item: FoodProps) => {
-        const deleted = food.filter(elem => elem.id !== item.id);
-        setFood(deleted);
-    }
-
     const handleDetails = (item: FoodProps) => {
         const seeDetails = food.filter(elem => elem.id === item.id);
         setAdminDetails(seeDetails);
+    }
+
+    const handleDelete = (id: number) => {
+        setItemToDelete(id);
+        setDeleteVisible(true);
     }
 
     return (
@@ -36,10 +38,11 @@ const AdminAllProducts = () => {
                     <div className='details_section'>
                         <Link to="/admin/update" onClick={() => handleUpdate(item)} className='update'>Update</Link>
                         <Link to="/admin/details" onClick={() => handleDetails(item)} className='details'>Details</Link>
-                        <button onClick={() => handleDelete(item)} className='delete'>Delete</button>
+                        <button onClick={() => handleDelete(item.id)} className='delete'>Delete</button>
                     </div>
                 </div>
             ))}
+            {deleteVisible && <DeleteWindow />}
         </div>
     )
 }
