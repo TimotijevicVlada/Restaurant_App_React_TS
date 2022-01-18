@@ -60,7 +60,7 @@ const CreateProduct = () => {
                     value={formik.values.url}
                     type="text"
                     name='url'
-                    placeholder='Product url' />
+                    placeholder='Image url' />
             </div>
             {formik.touched.url && formik.errors.url && (
                 <div className="error">{formik.errors.url}</div>

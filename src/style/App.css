@@ -7,6 +7,9 @@
 }
 
 .App .navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,6 +44,10 @@
   cursor: pointer;
 }
 
+.App .navbar .menu .link:hover {
+  text-decoration: underline;
+}
+
 .App .navbar .menu .cart {
   position: relative;
 }
@@ -66,7 +73,61 @@
           align-items: center;
 }
 
-.App .products {
+.App .navbar .nav_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .navbar .nav_right .link {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.App .navbar .nav_right .link:hover {
+  text-decoration: underline;
+}
+
+.App .home .header {
+  height: 93vh;
+  background: url(../image/pizza_header.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.App .home .header .header_text {
+  margin-right: 30px;
+  width: 40%;
+  color: white;
+  text-align: center;
+}
+
+.App .home .header .header_text .header_title {
+  font-size: 55px;
+  font-family: 'Nothing You Could Do', cursive;
+}
+
+.App .home .header .header_text .header_Second_title {
+  font-size: 45px;
+  font-family: 'Nothing You Could Do', cursive;
+}
+
+.App .home .header .header_text .header_order, .App .home .header .header_text .header_number {
+  font-size: 22px;
+}
+
+.App .home .products {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,10 +137,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 86vh;
+  min-height: 93vh;
 }
 
-.App .products .products_wrapper {
+.App .home .products .products_wrapper {
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
@@ -89,7 +150,7 @@
   margin: 10px 0px;
 }
 
-.App .products .products_wrapper .food {
+.App .home .products .products_wrapper .food {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,28 +164,28 @@
   background-color: #e7e8f1;
 }
 
-.App .products .products_wrapper .food img {
+.App .home .products .products_wrapper .food img {
   width: 300px;
   height: 200px;
   border-radius: 7px;
 }
 
-.App .products .products_wrapper .food .stars {
+.App .home .products .products_wrapper .food .stars {
   padding: 5px 0px;
 }
 
-.App .products .products_wrapper .food .stars i {
+.App .home .products .products_wrapper .food .stars i {
   color: yellow;
   font-size: 20px;
 }
 
-.App .products .products_wrapper .food .food_name {
+.App .home .products .products_wrapper .food .food_name {
   font-weight: 200;
   text-align: center;
   padding: 10px 0px;
 }
 
-.App .products .products_wrapper .food .event {
+.App .home .products .products_wrapper .food .event {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,7 +194,7 @@
           justify-content: space-between;
 }
 
-.App .products .products_wrapper .food .event button {
+.App .home .products .products_wrapper .food .event button {
   background-color: #0b0baa;
   color: white;
   border: none;
@@ -142,11 +203,11 @@
   cursor: pointer;
 }
 
-.App .products .products_wrapper .food .event button:hover {
+.App .home .products .products_wrapper .food .event button:hover {
   background-color: #3333b1;
 }
 
-.App .products .products_wrapper .food .event .food_price {
+.App .home .products .products_wrapper .food .event .food_price {
   font-size: 20px;
 }
 
@@ -372,7 +433,8 @@
 }
 
 .App .admin .all_products .product .details_section .details,
-.App .admin .all_products .product .details_section .update, .App .admin .all_products .product .details_section .delete {
+.App .admin .all_products .product .details_section .update,
+.App .admin .all_products .product .details_section .delete {
   background-color: blue;
   color: white;
   border: none;
@@ -383,7 +445,8 @@
 }
 
 .App .admin .all_products .product .details_section .details:hover,
-.App .admin .all_products .product .details_section .update:hover, .App .admin .all_products .product .details_section .delete:hover {
+.App .admin .all_products .product .details_section .update:hover,
+.App .admin .all_products .product .details_section .delete:hover {
   background-color: #3b3bf1;
 }
 
@@ -474,24 +537,28 @@
   background-color: #fc3131;
 }
 
-.App .admin .create, .App .admin .update {
+.App .admin .create,
+.App .admin .update {
   -webkit-box-flex: 9;
       -ms-flex: 9;
           flex: 9;
   padding: 20px;
 }
 
-.App .admin .create .title, .App .admin .update .title {
+.App .admin .create .title,
+.App .admin .update .title {
   text-align: center;
   font-weight: 200;
   padding: 10px 0px;
 }
 
-.App .admin .create div label, .App .admin .update div label {
+.App .admin .create div label,
+.App .admin .update div label {
   padding: 10px;
 }
 
-.App .admin .create div input, .App .admin .update div input {
+.App .admin .create div input,
+.App .admin .update div input {
   width: 100%;
   border: none;
   border-bottom: 1px solid lightgray;
@@ -500,11 +567,13 @@
   margin-bottom: 15px;
 }
 
-.App .admin .create div input:focus, .App .admin .update div input:focus {
+.App .admin .create div input:focus,
+.App .admin .update div input:focus {
   outline: none;
 }
 
-.App .admin .create div textarea, .App .admin .update div textarea {
+.App .admin .create div textarea,
+.App .admin .update div textarea {
   width: 100%;
   border: none;
   border-bottom: 1px solid lightgray;
@@ -513,16 +582,19 @@
   padding: 10px;
 }
 
-.App .admin .create div textarea:focus, .App .admin .update div textarea:focus {
+.App .admin .create div textarea:focus,
+.App .admin .update div textarea:focus {
   outline: none;
 }
 
-.App .admin .create .error, .App .admin .update .error {
+.App .admin .create .error,
+.App .admin .update .error {
   color: red;
   margin-bottom: 10px;
 }
 
-.App .admin .create .button button, .App .admin .update .button button {
+.App .admin .create .button button,
+.App .admin .update .button button {
   border: none;
   padding: 7px 40px;
   font-size: 18px;
@@ -531,25 +603,30 @@
   cursor: pointer;
 }
 
-.App .admin .create .button button:hover, .App .admin .update .button button:hover {
+.App .admin .create .button button:hover,
+.App .admin .update .button button:hover {
   background-color: #31a031;
 }
 
-.App .admin .create .button .update_btn, .App .admin .update .button .update_btn {
+.App .admin .create .button .update_btn,
+.App .admin .update .button .update_btn {
   background-color: orange;
 }
 
-.App .admin .create .button .update_btn:hover, .App .admin .update .button .update_btn:hover {
+.App .admin .create .button .update_btn:hover,
+.App .admin .update .button .update_btn:hover {
   background-color: #fab73b;
 }
 
-.App .admin .create .success_msg, .App .admin .update .success_msg {
+.App .admin .create .success_msg,
+.App .admin .update .success_msg {
   color: green;
   font-weight: bold;
   padding: 20px 0px;
 }
 
-.App .admin .create .update_msg, .App .admin .update .update_msg {
+.App .admin .create .update_msg,
+.App .admin .update .update_msg {
   color: orange;
 }
 
@@ -581,7 +658,9 @@
   font-weight: 200;
 }
 
-.App .admin .details_page .details_info .details_price, .App .admin .details_page .details_info .details_ingredients, .App .admin .details_page .details_info .details_description {
+.App .admin .details_page .details_info .details_price,
+.App .admin .details_page .details_info .details_ingredients,
+.App .admin .details_page .details_info .details_description {
   font-size: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -592,13 +671,17 @@
   margin-top: 30px;
 }
 
-.App .admin .details_page .details_info .details_price .details_text, .App .admin .details_page .details_info .details_ingredients .details_text, .App .admin .details_page .details_info .details_description .details_text {
+.App .admin .details_page .details_info .details_price .details_text,
+.App .admin .details_page .details_info .details_ingredients .details_text,
+.App .admin .details_page .details_info .details_description .details_text {
   text-align: justify;
   font-size: 18px;
   width: 50%;
 }
 
-.App .admin .details_page .details_info .details_price .price, .App .admin .details_page .details_info .details_ingredients .price, .App .admin .details_page .details_info .details_description .price {
+.App .admin .details_page .details_info .details_price .price,
+.App .admin .details_page .details_info .details_ingredients .price,
+.App .admin .details_page .details_info .details_description .price {
   font-size: 25px;
 }
 

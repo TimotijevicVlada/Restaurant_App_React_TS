@@ -46,28 +46,28 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const [itemToDelete, setItemToDelete] = useState<number | null>(null);
 
     //Print total quantity
-    const printTotalQunatity = () => {
+    const printTotalQunatity = useCallback( () => {
         const total = cart.reduce((accumulation, currentValue) => {
             return accumulation + currentValue.quantity;
         }, 0)
         setTotalQuantity(total);
-    }
+    }, [cart])
 
     useEffect(() => {
         printTotalQunatity();
-    }, [cart])
+    }, [printTotalQunatity])
 
     //Print total price
-    const printTotalPrice = () => {
+    const printTotalPrice = useCallback( () => {
         const total = cart.reduce((accumulation, currentValue) => {
             return accumulation + (currentValue.price * currentValue.quantity);
         }, 0)
         setTotalPrice(total);
-    }
+    }, [cart])
 
     useEffect(() => {
         printTotalPrice();
-    }, [cart])
+    }, [printTotalPrice])
 
     //Function that get cart food
     const getFoodStorage = () => {

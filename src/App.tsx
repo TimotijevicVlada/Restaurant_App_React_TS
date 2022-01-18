@@ -1,6 +1,6 @@
 import './style/App.css';
 import Navbar from './components/Navbar';
-import Products from './components/Products';
+import Home from './components/Home';
 import Cart from './components/Cart';
 import Admin from './components/admin/Admin';
 import CreateProduct from './components/admin/CreateProduct';
@@ -18,7 +18,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Products />}/>
+          <Route path="/" element={<Home />}/>
           <Route path="/cart" element={<Cart />}/>
           <Route path="/admin" element={<Admin />}>
               <Route path="/admin"  element={<AdminAllProducts />}/>

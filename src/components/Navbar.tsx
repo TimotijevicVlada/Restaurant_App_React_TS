@@ -8,17 +8,23 @@ const Navbar = () => {
 
 
     return (
-        <div className='navbar'>
+        <nav className='navbar'>
             <div className='logo'>
                 <i className="fas fa-utensils"></i>
-                <span>Restaurant</span>
+                <span>Pizza Bar</span>
             </div>
             <div className='menu'>
                 <Link className='link' to="/">Home</Link>
+                <Link className='link about' to="/about">About</Link>
+                <Link className='link' to="favorite">Favorite</Link>
                 <Link className='link cart' to="/cart">Cart {totalQuantity && <span className='total_quantity'>{totalQuantity}</span>} </Link>
-                <Link className='link' to="/admin">Admin</Link>
+                <Link className='link' to="review"></Link>
             </div>
-        </div>
+            <div className='nav_right'>
+                <Link to="sign" className='link'>SignUp</Link>
+                <Link to="/admin" className='link'>Admin</Link>
+            </div>
+        </nav>
     )
 }
 
