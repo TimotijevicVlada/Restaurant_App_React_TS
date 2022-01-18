@@ -8,9 +8,9 @@ const Products = () => {
     const { food, cart, setCart } = useContext(ProductsContext);
 
     const addToCart = (item: FoodProps) => {
-        const exist = cart.find(elem => elem.name === item.name);
+        const exist = cart.find(elem => elem.id === item.id);
         if (exist) {
-            setCart(cart.map(elem => elem.name === item.name ?
+            setCart(cart.map(elem => elem.id === item.id ?
                 { ...exist, quantity: exist.quantity === 10 ? 10 : exist.quantity + 1 } : elem
             ))
         } else {

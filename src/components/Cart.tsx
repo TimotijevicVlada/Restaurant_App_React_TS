@@ -7,18 +7,18 @@ const Cart = () => {
     const { cart, setCart, totalPrice, totalQuantity } = useContext(ProductsContext);
 
     const handleDelete = (item: FoodProps) => {
-        const deleted = cart.filter(elem => elem.name !== item.name);
+        const deleted = cart.filter(elem => elem.id !== item.id);
         setCart(deleted);
     }
 
     const handleIncrease = (item: FoodProps) => {
-        setCart(cart.map(elem => elem.name === item.name ?
+        setCart(cart.map(elem => elem.id === item.id ?
             { ...elem, quantity: elem.quantity === 10 ? 10 : elem.quantity + 1 } : elem
         ))
     }
 
     const handleDecrease = (item: FoodProps) => {
-        setCart(cart.map(elem => elem.name === item.name ?
+        setCart(cart.map(elem => elem.id === item.id ?
             { ...elem, quantity: elem.quantity === 1 ? 1 : elem.quantity - 1 } : elem
         ))
     }

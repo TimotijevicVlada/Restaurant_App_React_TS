@@ -15,6 +15,12 @@ const DetailsProduct = () => {
                 <div className='details_price'>
                    <span>Price:</span> <span>${adminDetails[0].price}</span> 
                 </div>
+                <div className='details_ingredients'>
+                    <span>Ingredients:</span> <span>{adminDetails[0].ingredients}</span>
+                </div>
+                <div className='details_description'>
+                    <span>Description:</span><span>{adminDetails[0].description}</span>
+                </div>
             </div>
         </div>
     )

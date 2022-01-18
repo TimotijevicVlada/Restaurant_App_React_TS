@@ -6,20 +6,20 @@ import { Link } from 'react-router-dom';
 
 const AdminAllProducts = () => {
 
-    const {food, setFood, setAdminDetails, setProductToUpdate} = useContext(ProductsContext);
+    const { food, setFood, setAdminDetails, setProductToUpdate } = useContext(ProductsContext);
 
     const handleUpdate = (item: FoodProps) => {
-        const itemToUpdate = food.filter(elem => elem.name === item.name);
+        const itemToUpdate = food.filter(elem => elem.id === item.id);
         setProductToUpdate(itemToUpdate);
     }
 
     const handleDelete = (item: FoodProps) => {
-        const deleted = food.filter(elem => elem.name !== item.name);
+        const deleted = food.filter(elem => elem.id !== item.id);
         setFood(deleted);
     }
 
     const handleDetails = (item: FoodProps) => {
-        const seeDetails = food.filter(elem => elem.name === item.name);
+        const seeDetails = food.filter(elem => elem.id === item.id);
         setAdminDetails(seeDetails);
     }
 

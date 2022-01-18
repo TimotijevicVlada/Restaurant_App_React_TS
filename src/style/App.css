@@ -438,6 +438,19 @@
   outline: none;
 }
 
+.App .admin .create div textarea, .App .admin .update div textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  font-size: 18px;
+  font-family: "Poppins";
+  padding: 10px;
+}
+
+.App .admin .create div textarea:focus, .App .admin .update div textarea:focus {
+  outline: none;
+}
+
 .App .admin .create .error, .App .admin .update .error {
   color: red;
   margin-bottom: 10px;
@@ -502,7 +515,7 @@
   font-weight: 200;
 }
 
-.App .admin .details_page .details_info .details_price {
+.App .admin .details_page .details_info .details_price, .App .admin .details_page .details_info .details_ingredients, .App .admin .details_page .details_info .details_description {
   font-size: 25px;
   display: -webkit-box;
   display: -ms-flexbox;

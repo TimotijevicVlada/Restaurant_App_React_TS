@@ -2,10 +2,13 @@ import { createContext, useState, useCallback, useEffect } from "react";
 import { products } from "../data";
 
 export type FoodProps = {
+    id: number
     name: string
     url: string
     price: number
     quantity: number
+    ingredients: string
+    description: string
 }
 
 type ProductsProps = {

@@ -12,9 +12,12 @@ const CreateProduct = () => {
     //Formik library
     const formik = useFormik({
         initialValues: {
+            id: Math.floor(Math.random() * 1000000),
             name: "",
             url: "",
             price: 0,
+            ingredients: "",
+            description: "",
             quantity: 1
         },
         validate,
@@ -22,9 +25,12 @@ const CreateProduct = () => {
             setFood([
                 ...food,
                 {
+                    id: values.id,
                     name: values.name,
                     url: values.url,
                     price: values.price,
+                    ingredients: values.ingredients,
+                    description: values.description,
                     quantity: values.quantity
                 }
             ].reverse())
@@ -58,6 +64,30 @@ const CreateProduct = () => {
             </div>
             {formik.touched.url && formik.errors.url && (
                 <div className="error">{formik.errors.url}</div>
+            )}
+            <div>
+                <input
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.ingredients}
+                    type="text"
+                    name='ingredients'
+                    placeholder='Product ingredients' />
+            </div>
+            {formik.touched.ingredients && formik.errors.ingredients && (
+                <div className="error">{formik.errors.ingredients}</div>
+            )}
+            <div>
+                <textarea
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.description}
+                    placeholder='Product description'
+                    name="description"
+                    rows={3} />
+            </div>
+            {formik.touched.description && formik.errors.description && (
+                <div className="error">{formik.errors.description}</div>
             )}
             <div>
                 <input
