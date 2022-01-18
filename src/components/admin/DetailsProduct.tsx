@@ -13,13 +13,13 @@ const DetailsProduct = () => {
             <div className='details_info'>
                 <h2>{adminDetails[0].name}</h2>
                 <div className='details_price'>
-                   <span>Price:</span> <span>${adminDetails[0].price}</span> 
+                   <span>Price:</span> <span className='details_text price'>${adminDetails[0].price}</span> 
                 </div>
                 <div className='details_ingredients'>
-                    <span>Ingredients:</span> <span>{adminDetails[0].ingredients}</span>
+                    <span>Ingredients:</span> <span className='details_text'>{adminDetails[0].ingredients}</span>
                 </div>
                 <div className='details_description'>
-                    <span>Description:</span><span>{adminDetails[0].description}</span>
+                    <span>Description:</span><span className='details_text'>{adminDetails[0].description}</span>
                 </div>
             </div>
         </div>

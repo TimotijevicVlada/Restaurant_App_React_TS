@@ -526,6 +526,16 @@
   margin-top: 30px;
 }
 
+.App .admin .details_page .details_info .details_price .details_text, .App .admin .details_page .details_info .details_ingredients .details_text, .App .admin .details_page .details_info .details_description .details_text {
+  text-align: justify;
+  font-size: 18px;
+  width: 50%;
+}
+
+.App .admin .details_page .details_info .details_price .price, .App .admin .details_page .details_info .details_ingredients .price, .App .admin .details_page .details_info .details_description .price {
+  font-size: 25px;
+}
+
 .App .footer {
   height: 7vh;
   display: -webkit-box;
