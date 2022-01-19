@@ -12,7 +12,7 @@ export type FoodProps = {
     description: string
 }
 
-export type SignupProps = {
+export type UserProps = {
     username: string
     email: string
     password: string
@@ -22,19 +22,21 @@ type ProductsProps = {
     food: FoodProps[]
     cart: FoodProps[]
     productToUpdate: FoodProps[]
-    totalQuantity: number | null
+    totalQuantity: number
     totalPrice: number
     adminDetails: FoodProps[]
     deleteVisible: boolean
     itemToDelete: number | null
-    signupUsers: SignupProps[]
+    signupUsers: UserProps[]
+    user: UserProps | null
     setItemToDelete: React.Dispatch<React.SetStateAction<number | null>>
     setDeleteVisible: React.Dispatch<React.SetStateAction<boolean>>
     setAdminDetails: React.Dispatch<React.SetStateAction<FoodProps[]>>
     setCart: React.Dispatch<React.SetStateAction<FoodProps[]>>
     setFood: React.Dispatch<React.SetStateAction<FoodProps[]>>
     setProductToUpdate: React.Dispatch<React.SetStateAction<FoodProps[]>>
-    setSignupUsers: React.Dispatch<React.SetStateAction<SignupProps[]>>
+    setSignupUsers: React.Dispatch<React.SetStateAction<UserProps[]>>
+    setUser: React.Dispatch<React.SetStateAction<UserProps | null>>
 }
 
 type ProductsContextProviderProps = {
@@ -47,13 +49,14 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
 
     const [food, setFood] = useState<FoodProps[]>(products);
     const [cart, setCart] = useState<FoodProps[]>([]);
-    const [totalQuantity, setTotalQuantity] = useState<number | null>(null);
+    const [totalQuantity, setTotalQuantity] = useState<number>(0);
     const [totalPrice, setTotalPrice] = useState<number>(0);
     const [productToUpdate, setProductToUpdate] = useState<FoodProps[]>([]);
     const [adminDetails, setAdminDetails] = useState<FoodProps[]>([]);
     const [deleteVisible, setDeleteVisible] = useState(false);
     const [itemToDelete, setItemToDelete] = useState<number | null>(null);
-    const [signupUsers, setSignupUsers] = useState<SignupProps[]>(users);
+    const [signupUsers, setSignupUsers] = useState<UserProps[]>(users);
+    const [user, setUser] = useState<UserProps | null>(null);
 
     //Print total quantity
     const printTotalQunatity = useCallback(() => {
@@ -85,13 +88,15 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             localStorage.setItem("PizzaBar", JSON.stringify({
                 food: [],
                 cart: [],
-                signupUsers: []
+                signupUsers: [],
+                user: null
             }));
         } else {
             const pizzaStorage = JSON.parse(localStorage.getItem("PizzaBar") || "");
             setFood(pizzaStorage.food);
             setCart(pizzaStorage.cart);
             setSignupUsers(pizzaStorage.users);
+            setUser(pizzaStorage.user);
         }
     }
     useEffect(() => {
@@ -103,9 +108,10 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
         localStorage.setItem("PizzaBar", JSON.stringify({
             food: food,
             cart: cart,
-            users: signupUsers
+            users: signupUsers,
+            user: user
         }));
-    }, [cart, food, signupUsers])
+    }, [cart, food, signupUsers, user])
 
     useEffect(() => {
         savePizzaStorage();
@@ -113,22 +119,15 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
 
     return (
         <ProductsContext.Provider value={{
-            food,
-            setFood,
-            cart,
-            setCart,
-            totalQuantity,
-            totalPrice,
-            productToUpdate,
-            setProductToUpdate,
-            adminDetails,
-            setAdminDetails,
-            deleteVisible,
-            setDeleteVisible,
-            itemToDelete,
-            setItemToDelete,
-            signupUsers,
-            setSignupUsers
+            food, setFood,
+            cart, setCart,
+            totalQuantity, totalPrice,
+            productToUpdate, setProductToUpdate,
+            adminDetails, setAdminDetails,
+            deleteVisible, setDeleteVisible,
+            itemToDelete, setItemToDelete,
+            signupUsers, setSignupUsers,
+            user, setUser
         }}>
             {children}
         </ProductsContext.Provider>

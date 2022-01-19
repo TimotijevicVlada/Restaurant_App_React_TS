@@ -25,5 +25,14 @@ export const products = [
         quantity: 1,
         ingredients: "cheese, eggs, kulen, paper, tomato",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium alias architecto temporibus ipsum nemo totam dolorem impedit quasi amet consectetur, ipsa repellat dignissimos rerum rem tempora quam ab commodi excepturi?"
+    },
+    {
+        id: 3456734552,
+        name: "Tomato",
+        url: "https://kupinica.com/wp-content/uploads/2014/03/pizza_fresca.jpg",
+        price: 10,
+        quantity: 1,
+        ingredients: "cheese, eggs, kulen, paper, tomato",
+        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium alias architecto temporibus ipsum nemo totam dolorem impedit quasi amet consectetur, ipsa repellat dignissimos rerum rem tempora quam ab commodi excepturi?"
     }
 ]

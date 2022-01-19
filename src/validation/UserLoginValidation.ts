@@ -4,14 +4,6 @@ import { UserProps } from "../context/Context"
 export const validate = (values: UserProps) => {
     let errors = {} as UserProps;
 
-    //Validate username
-    let usernameTest = /^[A-Z][a-z]{2,}/.test(values.username.trim());
-    if (!values.username.trim()) {
-      errors.username = "Username is required!";
-    } else if (!usernameTest) {
-        errors.username = "Username is invalid!";
-    } 
-
     //Validate email
     let emailTest = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(values.email);
     if (!values.email) {

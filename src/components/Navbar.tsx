@@ -4,7 +4,7 @@ import {ProductsContext} from "../context/Context";
 
 const Navbar = () => {
 
-    const {totalQuantity} = useContext(ProductsContext);
+    const {totalQuantity, user, setUser} = useContext(ProductsContext);
 
 
     return (
@@ -17,12 +17,13 @@ const Navbar = () => {
                 <Link className='link' to="/">Home</Link>
                 <Link className='link about' to="/about">About</Link>
                 <Link className='link' to="/favorite">Favorite</Link>
-                <Link className='link cart' to="/cart">Cart {totalQuantity && <span className='total_quantity'>{totalQuantity}</span>} </Link>
+                <Link className='link cart' to="/cart">Cart {totalQuantity > 0 && <span className='total_quantity'>{totalQuantity}</span>} </Link>
                 <Link className='link' to="/review"></Link>
             </div>
             <div className='nav_right'>
-                <Link to="/login" className='link'>Login</Link>
-                <Link to="/signup" className='link'>SignUp</Link>
+                {user && <span onClick={() => setUser(null)} className='link'>Logout</span>}
+                {!user && <Link to="/login" className='link'>Login</Link>}
+                {!user && <Link to="/signup" className='link'>SignUp</Link>}
                 <Link to="/admin" className='link'>Admin</Link>
             </div>
         </nav>

@@ -33,8 +33,6 @@ const Signup = () => {
         },
     });
 
-
-
     return (
         <div className='signup'>
             <form onSubmit={formik.handleSubmit}>
