@@ -51,6 +51,20 @@
     }
     .nav_right {
       display: flex;
+      align-items: center;
+      .currentUser {
+        background-color: rgb(76, 76, 230);
+        border-radius: 50%;
+        color: white;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        margin-right: 15px;
+        cursor: pointer;
+      }
       .link {
         color: inherit;
         text-decoration: none;

@@ -22,6 +22,7 @@ const Signup = () => {
             const check = signupUsers.find(item => item.username === values.username || item.email === values.email);
             if (check) {
                 setExistUserMessage(true);
+                setSuccessMesage(false);
             } else {
                 setSignupUsers([...signupUsers, {
                     username: values.username,
@@ -29,6 +30,7 @@ const Signup = () => {
                     password: values.password
                 }].reverse())
                 setSuccessMesage(true);
+                setExistUserMessage(false);
             }
         },
     });

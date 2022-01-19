@@ -21,6 +21,7 @@ const Navbar = () => {
                 <Link className='link' to="/review"></Link>
             </div>
             <div className='nav_right'>
+                {user && <span className='currentUser'>{user.username[0]}</span>}
                 {user && <span onClick={() => setUser(null)} className='link'>Logout</span>}
                 {!user && <Link to="/login" className='link'>Login</Link>}
                 {!user && <Link to="/signup" className='link'>SignUp</Link>}

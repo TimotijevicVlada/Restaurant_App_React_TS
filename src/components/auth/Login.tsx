@@ -28,11 +28,13 @@ const Login = () => {
                     password: check.password
                 })
                 setSuccessMesage(true);
+                setErrorMessage(false);
                 setTimeout(() => {
                     window.location.replace("/");
                 }, 1500)
             } else {
                 setErrorMessage(true);
+                setSuccessMesage(false);
             }
         },
     });
