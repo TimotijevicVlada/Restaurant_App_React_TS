@@ -1,5 +1,6 @@
 import { createContext, useState, useCallback, useEffect } from "react";
-import { products } from "../data";
+import { products } from "../data/data";
+import { users } from "../data/usersData";
 
 export type FoodProps = {
     id: number
@@ -11,6 +12,12 @@ export type FoodProps = {
     description: string
 }
 
+export type SignupProps = {
+    username: string
+    email: string
+    password: string
+}
+
 type ProductsProps = {
     food: FoodProps[]
     cart: FoodProps[]
@@ -20,12 +27,14 @@ type ProductsProps = {
     adminDetails: FoodProps[]
     deleteVisible: boolean
     itemToDelete: number | null
+    signupUsers: SignupProps[]
     setItemToDelete: React.Dispatch<React.SetStateAction<number | null>>
     setDeleteVisible: React.Dispatch<React.SetStateAction<boolean>>
     setAdminDetails: React.Dispatch<React.SetStateAction<FoodProps[]>>
     setCart: React.Dispatch<React.SetStateAction<FoodProps[]>>
     setFood: React.Dispatch<React.SetStateAction<FoodProps[]>>
     setProductToUpdate: React.Dispatch<React.SetStateAction<FoodProps[]>>
+    setSignupUsers: React.Dispatch<React.SetStateAction<SignupProps[]>>
 }
 
 type ProductsContextProviderProps = {
@@ -44,9 +53,10 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const [adminDetails, setAdminDetails] = useState<FoodProps[]>([]);
     const [deleteVisible, setDeleteVisible] = useState(false);
     const [itemToDelete, setItemToDelete] = useState<number | null>(null);
+    const [signupUsers, setSignupUsers] = useState<SignupProps[]>(users);
 
     //Print total quantity
-    const printTotalQunatity = useCallback( () => {
+    const printTotalQunatity = useCallback(() => {
         const total = cart.reduce((accumulation, currentValue) => {
             return accumulation + currentValue.quantity;
         }, 0)
@@ -58,7 +68,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     }, [printTotalQunatity])
 
     //Print total price
-    const printTotalPrice = useCallback( () => {
+    const printTotalPrice = useCallback(() => {
         const total = cart.reduce((accumulation, currentValue) => {
             return accumulation + (currentValue.price * currentValue.quantity);
         }, 0)
@@ -70,48 +80,36 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     }, [printTotalPrice])
 
     //Function that get cart food
-    const getFoodStorage = () => {
-        if (localStorage.getItem("restaurant") === null) {
-            localStorage.setItem("restaurant", JSON.stringify([]));
+    const getPizzaStorage = () => {
+        if (localStorage.getItem("PizzaBar") === null) {
+            localStorage.setItem("PizzaBar", JSON.stringify({
+                food: [],
+                cart: [],
+                signupUsers: []
+            }));
         } else {
-            const cartStorage = JSON.parse(localStorage.getItem("restaurant") || "");
-            setCart(cartStorage);
+            const pizzaStorage = JSON.parse(localStorage.getItem("PizzaBar") || "");
+            setFood(pizzaStorage.food);
+            setCart(pizzaStorage.cart);
+            setSignupUsers(pizzaStorage.users);
         }
     }
     useEffect(() => {
-        getFoodStorage();
+        getPizzaStorage();
     }, [])
 
     //Function that save cart food to local storage
-    const saveFoodStorage = useCallback(() => {
-        localStorage.setItem("restaurant", JSON.stringify(cart));
-    }, [cart])
+    const savePizzaStorage = useCallback(() => {
+        localStorage.setItem("PizzaBar", JSON.stringify({
+            food: food,
+            cart: cart,
+            users: signupUsers
+        }));
+    }, [cart, food, signupUsers])
 
     useEffect(() => {
-        saveFoodStorage();
-    }, [saveFoodStorage])
-
-    //Function that get food
-    const getStorage = () => {
-        if (localStorage.getItem("restaurantFood") === null) {
-            localStorage.setItem("restaurantFood", JSON.stringify([]));
-        } else {
-            const foodStorage = JSON.parse(localStorage.getItem("restaurantFood") || "");
-            setFood(foodStorage);
-        }
-    }
-    useEffect(() => {
-        getStorage();
-    }, [])
-
-    //Function that save food to local storage
-    const saveStorage = useCallback(() => {
-        localStorage.setItem("restaurantFood", JSON.stringify(food));
-    }, [food])
-
-    useEffect(() => {
-        saveStorage();
-    }, [saveStorage])
+        savePizzaStorage();
+    }, [savePizzaStorage])
 
     return (
         <ProductsContext.Provider value={{
@@ -125,10 +123,12 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             setProductToUpdate,
             adminDetails,
             setAdminDetails,
-            deleteVisible, 
+            deleteVisible,
             setDeleteVisible,
-            itemToDelete, 
-            setItemToDelete
+            itemToDelete,
+            setItemToDelete,
+            signupUsers,
+            setSignupUsers
         }}>
             {children}
         </ProductsContext.Provider>

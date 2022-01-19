@@ -11,6 +11,7 @@ import UpdateProduct from './components/admin/UpdateProduct';
 import DetailsProduct from './components/admin/DetailsProduct';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
+import Users from './components/admin/Users';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/admin/create" element={<CreateProduct />} />
             <Route path="/admin/update" element={<UpdateProduct />} />
             <Route path="/admin/details" element={<DetailsProduct />} />
+            <Route path="/admin/users" element={<Users />} />
           </Route>
         </Routes>
         <Footer />

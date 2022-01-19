@@ -270,7 +270,8 @@
         display: flex;
         flex-direction: column;
         input {
-          margin-bottom: 20px;
+          width: 100%;
+          margin-top: 20px;
           padding: 10px 0px;
           border: none;
           border-bottom: 2px solid brown;
@@ -280,7 +281,23 @@
             outline: none;
           }
         }
+        .error {
+          color: red;
+          font-size: 14px;
+        }
+        .pass {
+          position: relative;
+          .far {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            font-size: 27px;
+            color: gray;
+            cursor: pointer;
+          }
+        }
         button {
+          margin-top: 20px;
           font-size: 18px;
           padding: 10px 0px;
           border: none;
@@ -291,11 +308,16 @@
             background-color: rgb(167, 76, 76);
           }
         }
+        .error_message {
+          color: brown;
+          text-align: center;
+        }
+        .success_message {
+          color: green;
+          text-align: center;
+        }
       }
     }
-  }
-  .signup {
-    min-height: 86vh;
   }
   .admin {
     display: flex;
@@ -525,6 +547,30 @@
           }
           .price {
             font-size: 25px;
+          }
+        }
+      }
+    }
+    .users {
+      flex: 9;
+      padding: 20px;
+      h2 {
+        text-align: center;
+        font-weight: 200;
+        margin-bottom: 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        tr {
+          th {
+            padding: 7px 0px;
+            background-color: whitesmoke;
+          }
+          td {
+            border-bottom: 1px solid lightgray;
+            text-align: center;
+            padding: 7px 0px;
           }
         }
       }

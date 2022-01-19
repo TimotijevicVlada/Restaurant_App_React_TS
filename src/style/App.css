@@ -401,7 +401,8 @@
 }
 
 .App .login form .login_content input, .App .login form .signup_content input, .App .signup form .login_content input, .App .signup form .signup_content input {
-  margin-bottom: 20px;
+  width: 100%;
+  margin-top: 20px;
   padding: 10px 0px;
   border: none;
   border-bottom: 2px solid brown;
@@ -413,7 +414,26 @@
   outline: none;
 }
 
+.App .login form .login_content .error, .App .login form .signup_content .error, .App .signup form .login_content .error, .App .signup form .signup_content .error {
+  color: red;
+  font-size: 14px;
+}
+
+.App .login form .login_content .pass, .App .login form .signup_content .pass, .App .signup form .login_content .pass, .App .signup form .signup_content .pass {
+  position: relative;
+}
+
+.App .login form .login_content .pass .far, .App .login form .signup_content .pass .far, .App .signup form .login_content .pass .far, .App .signup form .signup_content .pass .far {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  font-size: 27px;
+  color: gray;
+  cursor: pointer;
+}
+
 .App .login form .login_content button, .App .login form .signup_content button, .App .signup form .login_content button, .App .signup form .signup_content button {
+  margin-top: 20px;
   font-size: 18px;
   padding: 10px 0px;
   border: none;
@@ -426,8 +446,14 @@
   background-color: #a74c4c;
 }
 
-.App .signup {
-  min-height: 86vh;
+.App .login form .login_content .error_message, .App .login form .signup_content .error_message, .App .signup form .login_content .error_message, .App .signup form .signup_content .error_message {
+  color: brown;
+  text-align: center;
+}
+
+.App .login form .login_content .success_message, .App .login form .signup_content .success_message, .App .signup form .login_content .success_message, .App .signup form .signup_content .success_message {
+  color: green;
+  text-align: center;
 }
 
 .App .admin {
@@ -761,6 +787,35 @@
 .App .admin .details_page .details_info .details_ingredients .price,
 .App .admin .details_page .details_info .details_description .price {
   font-size: 25px;
+}
+
+.App .admin .users {
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+  padding: 20px;
+}
+
+.App .admin .users h2 {
+  text-align: center;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.App .admin .users table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.App .admin .users table tr th {
+  padding: 7px 0px;
+  background-color: whitesmoke;
+}
+
+.App .admin .users table tr td {
+  border-bottom: 1px solid lightgray;
+  text-align: center;
+  padding: 7px 0px;
 }
 
 .App .footer {
