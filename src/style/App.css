@@ -20,7 +20,7 @@
       -ms-flex-align: center;
           align-items: center;
   height: 7vh;
-  background-color: #e0e0e0;
+  background-color: beige;
 }
 
 .App .navbar .logo {
@@ -138,6 +138,7 @@
       -ms-flex-align: center;
           align-items: center;
   min-height: 93vh;
+  background: url(../image/pizza_background.jpg) repeat;
 }
 
 .App .home .products .products_wrapper {
@@ -160,14 +161,13 @@
           flex-direction: column;
   margin: 5px;
   padding: 10px;
-  border-radius: 10px;
-  background-color: #e7e8f1;
+  background-color: brown;
+  color: white;
 }
 
 .App .home .products .products_wrapper .food img {
   width: 300px;
   height: 200px;
-  border-radius: 7px;
 }
 
 .App .home .products .products_wrapper .food .stars {
@@ -195,16 +195,16 @@
 }
 
 .App .home .products .products_wrapper .food .event button {
-  background-color: #0b0baa;
+  background-color: beige;
   color: white;
   border: none;
   padding: 5px 10px;
-  border-radius: 5px;
+  color: brown;
   cursor: pointer;
 }
 
 .App .home .products .products_wrapper .food .event button:hover {
-  background-color: #3333b1;
+  background-color: khaki;
 }
 
 .App .home .products .products_wrapper .food .event .food_price {
@@ -350,6 +350,79 @@
 
 .App .cart .cart_total .total_info .order_btn:hover {
   background-color: white;
+}
+
+.App .login {
+  min-height: 86vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .login form {
+  padding: 20px;
+  width: 400px;
+  min-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #e1c699;
+}
+
+.App .login form h2 {
+  text-align: center;
+  padding: 20px 0px;
+  font-weight: 200;
+  color: brown;
+}
+
+.App .login form .login_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .login form .login_content input {
+  margin-bottom: 20px;
+  padding: 10px 0px;
+  border: none;
+  border-bottom: 2px solid lightgray;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+.App .login form .login_content input:focus {
+  outline: none;
+}
+
+.App .login form .login_content button {
+  font-size: 18px;
+  padding: 10px 0px;
+  border: none;
+  cursor: pointer;
+  background-color: brown;
+  color: white;
+}
+
+.App .signup {
+  min-height: 86vh;
 }
 
 .App .admin {
@@ -696,7 +769,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #e0e0e0;
+  background-color: beige;
 }
 
 .App .footer span {

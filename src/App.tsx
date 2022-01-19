@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer';
 import UpdateProduct from './components/admin/UpdateProduct';
 import DetailsProduct from './components/admin/DetailsProduct';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
 
 function App() {
 
@@ -18,13 +20,15 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/cart" element={<Cart />}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/admin" element={<Admin />}>
-              <Route path="/admin"  element={<AdminAllProducts />}/>
-              <Route path="/admin/create" element={<CreateProduct />}/> 
-              <Route path="/admin/update" element={<UpdateProduct />} />
-              <Route path="/admin/details" element={<DetailsProduct />} />
+            <Route path="/admin" element={<AdminAllProducts />} />
+            <Route path="/admin/create" element={<CreateProduct />} />
+            <Route path="/admin/update" element={<UpdateProduct />} />
+            <Route path="/admin/details" element={<DetailsProduct />} />
           </Route>
         </Routes>
         <Footer />

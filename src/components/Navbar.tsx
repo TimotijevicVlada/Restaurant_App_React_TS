@@ -16,12 +16,13 @@ const Navbar = () => {
             <div className='menu'>
                 <Link className='link' to="/">Home</Link>
                 <Link className='link about' to="/about">About</Link>
-                <Link className='link' to="favorite">Favorite</Link>
+                <Link className='link' to="/favorite">Favorite</Link>
                 <Link className='link cart' to="/cart">Cart {totalQuantity && <span className='total_quantity'>{totalQuantity}</span>} </Link>
-                <Link className='link' to="review"></Link>
+                <Link className='link' to="/review"></Link>
             </div>
             <div className='nav_right'>
-                <Link to="sign" className='link'>SignUp</Link>
+                <Link to="/login" className='link'>Login</Link>
+                <Link to="/signup" className='link'>SignUp</Link>
                 <Link to="/admin" className='link'>Admin</Link>
             </div>
         </nav>
