@@ -352,7 +352,7 @@
   background-color: white;
 }
 
-.App .login {
+.App .login, .App .signup {
   min-height: 86vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -363,9 +363,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: url(../image/pizza_background.jpg) repeat;
 }
 
-.App .login form {
+.App .login form, .App .signup form {
   padding: 20px;
   width: 400px;
   min-height: 400px;
@@ -379,17 +380,17 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #e1c699;
+  background-color: #E8D3B9;
 }
 
-.App .login form h2 {
+.App .login form h2, .App .signup form h2 {
   text-align: center;
-  padding: 20px 0px;
+  padding: 10px 0px;
   font-weight: 200;
   color: brown;
 }
 
-.App .login form .login_content {
+.App .login form .login_content, .App .login form .signup_content, .App .signup form .login_content, .App .signup form .signup_content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -399,26 +400,30 @@
           flex-direction: column;
 }
 
-.App .login form .login_content input {
+.App .login form .login_content input, .App .login form .signup_content input, .App .signup form .login_content input, .App .signup form .signup_content input {
   margin-bottom: 20px;
   padding: 10px 0px;
   border: none;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid brown;
   font-size: 18px;
   background-color: transparent;
 }
 
-.App .login form .login_content input:focus {
+.App .login form .login_content input:focus, .App .login form .signup_content input:focus, .App .signup form .login_content input:focus, .App .signup form .signup_content input:focus {
   outline: none;
 }
 
-.App .login form .login_content button {
+.App .login form .login_content button, .App .login form .signup_content button, .App .signup form .login_content button, .App .signup form .signup_content button {
   font-size: 18px;
   padding: 10px 0px;
   border: none;
   cursor: pointer;
   background-color: brown;
   color: white;
+}
+
+.App .login form .login_content button:hover, .App .login form .signup_content button:hover, .App .signup form .login_content button:hover, .App .signup form .signup_content button:hover {
+  background-color: #a74c4c;
 }
 
 .App .signup {
