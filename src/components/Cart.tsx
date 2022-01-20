@@ -23,29 +23,32 @@ const Cart = () => {
         ))
     }
 
+    const emptyCartImageUrl = "https://www.pinclipart.com/picdir/middle/539-5398849_black-icon-food-outline-symbol-car-white-cartoon.png";
+
     return (
         <div className='cart'>
             <div className='cart_items'>
-                {cart.map((item, index) => (
-                    <div className='cart_item' key={index}>
-                        <img className='item_img' src={item.url} alt={item.name} />
-                        <span className='item_name'>{item.name}</span>
-                        <span className='item_price'>${item.price}</span>
-                        <div className='quantity'>
-                            <i onClick={() => handleIncrease(item)} className='fas fa-chevron-up'></i>
-                            <span>{item.quantity}</span>
-                            <i onClick={() => handleDecrease(item)} className='fas fa-chevron-down'></i>
+                {cart.length < 1 ? <div className='empty_cart'><i className="fas fa-shopping-cart"></i><div className='empty_cart_text'>Your cart is empty!</div></div>
+                    : cart.map((item, index) => (
+                        <div className='cart_item' key={index}>
+                            <img className='item_img' src={item.url} alt={item.name} />
+                            <span className='item_name'>{item.name}</span>
+                            <span className='item_price'>${item.price}</span>
+                            <div className='quantity'>
+                                <i onClick={() => handleIncrease(item)} className='fas fa-chevron-up'></i>
+                                <span>{item.quantity}</span>
+                                <i onClick={() => handleDecrease(item)} className='fas fa-chevron-down'></i>
+                            </div>
+                            <button onClick={() => handleDelete(item)} className='delete'>Delete</button>
                         </div>
-                        <button onClick={() => handleDelete(item)} className='delete'>Delete</button>
-                    </div>
-                ))}
+                    ))}
             </div>
             <div className='cart_total'>
                 <h2 className='total_title'>Summary</h2>
                 <div className='total_info'>
                     <span onClick={() => setCart([])} className='delete_all'>DELETE ALL!</span>
                     <div className='total_products'>Total products: <span>{totalQuantity}</span></div>
-                    <div className='total_price'>Total price: <span>${totalPrice}</span></div> 
+                    <div className='total_price'>Total price: <span>${totalPrice}</span></div>
                     <button onClick={() => alert("Thank's for buying our food!")} className='order_btn'>ORDER</button>
                 </div>
             </div>

@@ -250,6 +250,20 @@
   padding: 10px;
 }
 
+.App .cart .cart_items .empty_cart {
+  text-align: center;
+  padding: 100px 0px;
+  color: gray;
+}
+
+.App .cart .cart_items .empty_cart i {
+  font-size: 80px;
+}
+
+.App .cart .cart_items .empty_cart .empty_cart_text {
+  font-size: 30px;
+}
+
 .App .cart .cart_items .cart_item {
   display: -webkit-box;
   display: -ms-flexbox;

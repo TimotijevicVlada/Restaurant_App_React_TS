@@ -24,14 +24,14 @@ const UserUpdate = () => {
                     email: values.email,
                     password: values.password
                 } : item)
-                setSignupUsers(updatedUser);
-                setSuccessMessage(true);
+                setSignupUsers(updatedUser); 
                 setUser([{
                     id: values.id,
                     username: values.username,
                     email: values.email,
                     password: values.password
                 }])
+                setSuccessMessage(true);
         },
     });
 

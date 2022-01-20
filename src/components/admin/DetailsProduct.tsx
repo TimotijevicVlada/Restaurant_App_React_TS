@@ -8,18 +8,18 @@ const DetailsProduct = () => {
     return (
         <div className='details_page'>
             <div className='details_image'>
-                <img src={adminDetails[0].url} alt={adminDetails[0].name} />
+                <img src={adminDetails[0]?.url} alt={adminDetails[0]?.name} />
             </div>
             <div className='details_info'>
-                <h2>{adminDetails[0].name}</h2>
+                <h2>{adminDetails[0]?.name}</h2>
                 <div className='details_price'>
-                   <span>Price:</span> <span className='details_text price'>${adminDetails[0].price}</span> 
+                   <span>Price:</span> <span className='details_text price'>${adminDetails[0]?.price}</span> 
                 </div>
                 <div className='details_ingredients'>
-                    <span>Ingredients:</span> <span className='details_text'>{adminDetails[0].ingredients}</span>
+                    <span>Ingredients:</span> <span className='details_text'>{adminDetails[0]?.ingredients}</span>
                 </div>
                 <div className='details_description'>
-                    <span>Description:</span><span className='details_text'>{adminDetails[0].description}</span>
+                    <span>Description:</span><span className='details_text'>{adminDetails[0]?.description}</span>
                 </div>
             </div>
         </div>

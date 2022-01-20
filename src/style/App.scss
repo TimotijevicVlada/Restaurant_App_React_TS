@@ -172,6 +172,17 @@
       flex: 9;
       min-height: 86vh;
       padding: 10px;
+      .empty_cart {
+        text-align: center;
+        padding: 100px 0px;
+        color: gray;
+        i {
+          font-size: 80px;
+        }
+        .empty_cart_text {
+          font-size: 30px;
+        }
+      }
       .cart_item {
         display: flex;
         justify-content: space-between;
