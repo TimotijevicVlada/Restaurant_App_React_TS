@@ -11,12 +11,12 @@ const UpdateProduct = () => {
     //Formik library
     const formik = useFormik({
         initialValues: {
-            id: productToUpdate[0].id,
-            name: productToUpdate[0].name,
-            url: productToUpdate[0].url,
-            price: productToUpdate[0].price,
-            ingredients: productToUpdate[0].ingredients,
-            description: productToUpdate[0].description,
+            id: productToUpdate[0]?.id,
+            name: productToUpdate[0]?.name,
+            url: productToUpdate[0]?.url,
+            price: productToUpdate[0]?.price,
+            ingredients: productToUpdate[0]?.ingredients,
+            description: productToUpdate[0]?.description,
             quantity: 1
         },
         validate,

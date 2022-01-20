@@ -5,7 +5,7 @@ import { ProductsContext } from '../../context/Context';
 
 const Login = () => {
 
-    const { user, setUser, signupUsers } = useContext(ProductsContext);
+    const { setUser, signupUsers } = useContext(ProductsContext);
 
     const [errorMessage, setErrorMessage] = useState(false);
     const [successMesage, setSuccessMesage] = useState(false);
@@ -23,17 +23,17 @@ const Login = () => {
         onSubmit: (values) => {
             const check = signupUsers.find(item => item.email === values.email && item.password === values.password);
             if (check) {
-                setUser({
+                setUser([{
                     id: check.id,
                     username: check.username,
                     email: check.email,
                     password: check.password
-                })
+                }])
                 setSuccessMesage(true);
                 setErrorMessage(false);
                 setTimeout(() => {
                     window.location.replace("/");
-                }, 1500)
+                }, 1000)
             } else {
                 setErrorMessage(true);
                 setSuccessMesage(false);

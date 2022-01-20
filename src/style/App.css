@@ -514,8 +514,19 @@
   font-size: 17px;
 }
 
+.App .user_update form .update_content .error {
+  color: red;
+  margin-top: 0px;
+}
+
 .App .user_update form .update_content .btn {
   border-bottom: none;
+}
+
+.App .user_update form .update_content .success_message {
+  text-align: center;
+  color: green;
+  margin-top: 0px;
 }
 
 .App .login,

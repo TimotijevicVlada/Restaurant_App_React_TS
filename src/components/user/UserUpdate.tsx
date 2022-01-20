@@ -1,29 +1,37 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ProductsContext } from '../../context/Context';
 import { useFormik } from 'formik';
+import { validate } from '../../validation/UserSignupValidation';
 
 const UserUpdate = () => {
 
-    const { user, signupUsers, setSignupUsers } = useContext(ProductsContext);
+    const { setUser, userToUpdate, signupUsers, setSignupUsers } = useContext(ProductsContext);
+    const [successMessage, setSuccessMessage] = useState(false);
 
     //Formik library
     const formik = useFormik({
         initialValues: {
-            id: user?.id,
-            username: user?.username,
-            email: user?.email,
-            password: user?.password
+            id: userToUpdate[0]?.id,
+            username: userToUpdate[0]?.username,
+            email: userToUpdate[0]?.email,
+            password: userToUpdate[0]?.password
         },
-        //validate,
+        validate,
         onSubmit: (values) => {
-            const update = signupUsers.map((item) => item.id === values.id ?
-                {
+                const updatedUser = signupUsers.map(item => item.id === values.id ? {
                     ...item,
                     username: values.username,
                     email: values.email,
                     password: values.password
-                } : item );
-            setSignupUsers(update);
+                } : item)
+                setSignupUsers(updatedUser);
+                setSuccessMessage(true);
+                setUser([{
+                    id: values.id,
+                    username: values.username,
+                    email: values.email,
+                    password: values.password
+                }])
         },
     });
 
@@ -43,6 +51,9 @@ const UserUpdate = () => {
                             autoFocus
                         />
                     </div>
+                    {formik.touched.username && formik.errors.username && (
+                        <div className="error">{formik.errors.username}</div>
+                    )}
                     <div>
                         <label>Email</label>
                         <input
@@ -53,6 +64,9 @@ const UserUpdate = () => {
                             type="text"
                         />
                     </div>
+                    {formik.touched.email && formik.errors.email && (
+                        <div className="error">{formik.errors.email}</div>
+                    )}
                     <div>
                         <label>Password</label>
                         <input
@@ -63,9 +77,13 @@ const UserUpdate = () => {
                             type="text"
                         />
                     </div>
+                    {formik.touched.password && formik.errors.password && (
+                        <div className="error">{formik.errors.password}</div>
+                    )}
                     <div className='btn'>
                         <button type='submit'>Update your profile</button>
                     </div>
+                    {successMessage && <div className='success_message'>User has been updated!</div>}
                 </div>
             </form>
         </div>

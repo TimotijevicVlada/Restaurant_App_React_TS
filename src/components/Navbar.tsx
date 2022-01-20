@@ -6,7 +6,6 @@ const Navbar = () => {
 
     const {totalQuantity, user, setUser} = useContext(ProductsContext);
 
-
     return (
         <nav className='navbar'>
             <div className='logo'>
@@ -21,10 +20,10 @@ const Navbar = () => {
                 <Link className='link' to="/review"></Link>
             </div>
             <div className='nav_right'>
-                {user && <Link to="/user" className='currentUser'>{user.username[0]}</Link>}
-                {user && <span onClick={() => setUser(null)} className='link'>Logout</span>}
-                {!user && <Link to="/login" className='link'>Login</Link>}
-                {!user && <Link to="/signup" className='link'>SignUp</Link>}
+                {user.length > 0 && <Link to="/user" className='currentUser'>{user[0].username[0]}</Link>}
+                {user.length > 0 && <Link to="/" onClick={() => setUser([])} className='link'>Logout</Link>}
+                {user.length < 1 && <Link to="/login" className='link'>Login</Link>}
+                {user.length < 1 && <Link to="/signup" className='link'>SignUp</Link>}
                 <Link to="/admin" className='link'>Admin</Link>
             </div>
         </nav>

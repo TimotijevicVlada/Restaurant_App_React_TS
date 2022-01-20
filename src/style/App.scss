@@ -349,8 +349,17 @@
             font-size: 17px;
           }
         }
+        .error {
+          color: red;
+          margin-top: 0px;
+        }
         .btn {
           border-bottom: none;
+        }
+        .success_message {
+          text-align: center;
+          color: green;
+          margin-top: 0px;
         }
       }
     }
