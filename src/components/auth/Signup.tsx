@@ -13,6 +13,7 @@ const Signup = () => {
     //Formik library
     const formik = useFormik({
         initialValues: {
+            id: Math.floor(Math.random() * 100000),
             username: "",
             email: "",
             password: ""
@@ -25,6 +26,7 @@ const Signup = () => {
                 setSuccessMesage(false);
             } else {
                 setSignupUsers([...signupUsers, {
+                    id: values.id,
                     username: values.username,
                     email: values.email,
                     password: values.password

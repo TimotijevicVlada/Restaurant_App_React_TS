@@ -12,6 +12,8 @@ import DetailsProduct from './components/admin/DetailsProduct';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Users from './components/admin/Users';
+import User from './components/user/UserInfo';
+import UserUpdate from './components/user/UserUpdate';
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/user" element={<User />}/>
+          <Route path="/userupdate" element={<UserUpdate />}/>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/admin" element={<Admin />}>

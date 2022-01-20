@@ -13,9 +13,10 @@ export type FoodProps = {
 }
 
 export type UserProps = {
-    username: string
-    email: string
-    password: string
+    id: number
+    username: string 
+    email: string 
+    password: string 
 }
 
 type ProductsProps = {

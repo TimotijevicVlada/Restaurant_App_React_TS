@@ -99,6 +99,7 @@
           align-items: center;
   font-size: 30px;
   margin-right: 15px;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -138,15 +139,16 @@
 
 .App .home .header .header_text .header_title {
   font-size: 55px;
-  font-family: 'Nothing You Could Do', cursive;
+  font-family: "Nothing You Could Do", cursive;
 }
 
 .App .home .header .header_text .header_Second_title {
   font-size: 45px;
-  font-family: 'Nothing You Could Do', cursive;
+  font-family: "Nothing You Could Do", cursive;
 }
 
-.App .home .header .header_text .header_order, .App .home .header .header_text .header_number {
+.App .home .header .header_text .header_order,
+.App .home .header .header_text .header_number {
   font-size: 22px;
 }
 
@@ -375,7 +377,149 @@
   background-color: white;
 }
 
-.App .login, .App .signup {
+.App .user {
+  min-height: 86vh;
+  background: url(../image/pizza_background.jpg) repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .user .user_container {
+  width: 400px;
+  min-height: 400px;
+  background-color: #e8d3b9;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .user .user_container h2 {
+  text-align: center;
+  padding: 10px 0px;
+  font-weight: 200;
+}
+
+.App .user .user_container .user_content .field {
+  border-bottom: 1px solid gray;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .user .user_container .user_content .field .button {
+  width: 100%;
+  font-size: 17px;
+  border: none;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  padding: 5px 0px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.App .user .user_container .user_content .field .button:hover {
+  background-color: #f5ba4e;
+}
+
+.App .user .user_container .user_content .btn_field {
+  border-bottom: none;
+}
+
+.App .user_update {
+  min-height: 86vh;
+  background: url(../image/pizza_background.jpg) repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .user_update form {
+  width: 400px;
+  min-height: 400px;
+  background-color: #e8d3b9;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .user_update form h2 {
+  text-align: center;
+  padding: 10px 0px;
+  font-weight: 200;
+}
+
+.App .user_update form .update_content div {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .user_update form .update_content div input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 16px;
+}
+
+.App .user_update form .update_content div input:focus {
+  outline: none;
+}
+
+.App .user_update form .update_content div button {
+  border: none;
+  padding: 5px 0px;
+  background-color: orange;
+  cursor: pointer;
+  color: white;
+  font-size: 17px;
+}
+
+.App .user_update form .update_content .btn {
+  border-bottom: none;
+}
+
+.App .login,
+.App .signup {
   min-height: 86vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -389,7 +533,8 @@
   background: url(../image/pizza_background.jpg) repeat;
 }
 
-.App .login form, .App .signup form {
+.App .login form,
+.App .signup form {
   padding: 20px;
   width: 400px;
   min-height: 400px;
@@ -403,17 +548,21 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #E8D3B9;
+  background-color: #e8d3b9;
 }
 
-.App .login form h2, .App .signup form h2 {
+.App .login form h2,
+.App .signup form h2 {
   text-align: center;
   padding: 10px 0px;
   font-weight: 200;
   color: brown;
 }
 
-.App .login form .login_content, .App .login form .signup_content, .App .signup form .login_content, .App .signup form .signup_content {
+.App .login form .login_content,
+.App .login form .signup_content,
+.App .signup form .login_content,
+.App .signup form .signup_content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -423,7 +572,10 @@
           flex-direction: column;
 }
 
-.App .login form .login_content input, .App .login form .signup_content input, .App .signup form .login_content input, .App .signup form .signup_content input {
+.App .login form .login_content input,
+.App .login form .signup_content input,
+.App .signup form .login_content input,
+.App .signup form .signup_content input {
   width: 100%;
   margin-top: 20px;
   padding: 10px 0px;
@@ -433,20 +585,32 @@
   background-color: transparent;
 }
 
-.App .login form .login_content input:focus, .App .login form .signup_content input:focus, .App .signup form .login_content input:focus, .App .signup form .signup_content input:focus {
+.App .login form .login_content input:focus,
+.App .login form .signup_content input:focus,
+.App .signup form .login_content input:focus,
+.App .signup form .signup_content input:focus {
   outline: none;
 }
 
-.App .login form .login_content .error, .App .login form .signup_content .error, .App .signup form .login_content .error, .App .signup form .signup_content .error {
+.App .login form .login_content .error,
+.App .login form .signup_content .error,
+.App .signup form .login_content .error,
+.App .signup form .signup_content .error {
   color: red;
   font-size: 14px;
 }
 
-.App .login form .login_content .pass, .App .login form .signup_content .pass, .App .signup form .login_content .pass, .App .signup form .signup_content .pass {
+.App .login form .login_content .pass,
+.App .login form .signup_content .pass,
+.App .signup form .login_content .pass,
+.App .signup form .signup_content .pass {
   position: relative;
 }
 
-.App .login form .login_content .pass .far, .App .login form .signup_content .pass .far, .App .signup form .login_content .pass .far, .App .signup form .signup_content .pass .far {
+.App .login form .login_content .pass .far,
+.App .login form .signup_content .pass .far,
+.App .signup form .login_content .pass .far,
+.App .signup form .signup_content .pass .far {
   position: absolute;
   top: 30px;
   right: 20px;
@@ -455,7 +619,10 @@
   cursor: pointer;
 }
 
-.App .login form .login_content button, .App .login form .signup_content button, .App .signup form .login_content button, .App .signup form .signup_content button {
+.App .login form .login_content button,
+.App .login form .signup_content button,
+.App .signup form .login_content button,
+.App .signup form .signup_content button {
   margin-top: 20px;
   font-size: 18px;
   padding: 10px 0px;
@@ -465,16 +632,25 @@
   color: white;
 }
 
-.App .login form .login_content button:hover, .App .login form .signup_content button:hover, .App .signup form .login_content button:hover, .App .signup form .signup_content button:hover {
+.App .login form .login_content button:hover,
+.App .login form .signup_content button:hover,
+.App .signup form .login_content button:hover,
+.App .signup form .signup_content button:hover {
   background-color: #a74c4c;
 }
 
-.App .login form .login_content .error_message, .App .login form .signup_content .error_message, .App .signup form .login_content .error_message, .App .signup form .signup_content .error_message {
+.App .login form .login_content .error_message,
+.App .login form .signup_content .error_message,
+.App .signup form .login_content .error_message,
+.App .signup form .signup_content .error_message {
   color: brown;
   text-align: center;
 }
 
-.App .login form .login_content .success_message, .App .login form .signup_content .success_message, .App .signup form .login_content .success_message, .App .signup form .signup_content .success_message {
+.App .login form .login_content .success_message,
+.App .login form .signup_content .success_message,
+.App .signup form .login_content .success_message,
+.App .signup form .signup_content .success_message {
   color: green;
   text-align: center;
 }

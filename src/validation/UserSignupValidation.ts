@@ -25,7 +25,7 @@ export const validate = (values: UserProps) => {
     if (!values.password) {
       errors.password = "Password is required!";
     } else if (!passTest) {
-      errors.password = "Password require uppercase, lowercase and number!";
+      errors.password = "Password require uppercase, lowercase and number, min 8 caracters. Example: Alex1234";
     }
 
     return errors;

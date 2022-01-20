@@ -5,7 +5,7 @@ import { ProductsContext } from '../../context/Context';
 
 const Login = () => {
 
-    const { setUser, signupUsers } = useContext(ProductsContext);
+    const { user, setUser, signupUsers } = useContext(ProductsContext);
 
     const [errorMessage, setErrorMessage] = useState(false);
     const [successMesage, setSuccessMesage] = useState(false);
@@ -14,6 +14,7 @@ const Login = () => {
     //Formik library
     const formik = useFormik({
         initialValues: {
+            id: 0,
             username: "",
             email: "",
             password: ""
@@ -23,6 +24,7 @@ const Login = () => {
             const check = signupUsers.find(item => item.email === values.email && item.password === values.password);
             if (check) {
                 setUser({
+                    id: check.id,
                     username: check.username,
                     email: check.email,
                     password: check.password
