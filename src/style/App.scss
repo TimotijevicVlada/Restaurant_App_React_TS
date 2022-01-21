@@ -786,6 +786,55 @@
     .admin_messages {
       flex: 9;
       padding: 20px;
+      h2 {
+        text-align: center;
+        font-weight: 200;
+      }
+      .admin_messages_content {
+        .admin_msg {
+          background-color: whitesmoke;
+          margin: 8px 0px;
+          padding: 10px;
+          .admin_wrapper {
+            display: flex;
+            .admin_msg_left,
+            .admin_msg_right {
+              width: 50%;
+              padding: 5px;
+              .admin_filed {
+                div {
+                  background-color: rgb(228, 228, 228);
+                  padding: 5px;
+                }
+              }
+              .message {
+                div {
+                  height: 91px;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+          .msg_footer {
+            text-align: right;
+            padding-top: 5px;
+            .date {
+              color: orange;
+              margin-right: 15px;
+            }
+            button {
+              background-color: red;
+              color: white;
+              padding: 3px 10px;
+              border: none;
+              cursor: pointer;
+              &:hover {
+                background-color: rgb(255, 53, 53);
+              }
+            }
+          }
+        }
+      }
     }
   }
   .footer {

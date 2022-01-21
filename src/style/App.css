@@ -1156,6 +1156,63 @@
   padding: 20px;
 }
 
+.App .admin .admin_messages h2 {
+  text-align: center;
+  font-weight: 200;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_msg {
+  background-color: whitesmoke;
+  margin: 8px 0px;
+  padding: 10px;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_msg .admin_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_msg .admin_wrapper .admin_msg_left,
+.App .admin .admin_messages .admin_messages_content .admin_msg .admin_wrapper .admin_msg_right {
+  width: 50%;
+  padding: 5px;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_msg .admin_wrapper .admin_msg_left .admin_filed div,
+.App .admin .admin_messages .admin_messages_content .admin_msg .admin_wrapper .admin_msg_right .admin_filed div {
+  background-color: #e4e4e4;
+  padding: 5px;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_msg .admin_wrapper .admin_msg_left .message div,
+.App .admin .admin_messages .admin_messages_content .admin_msg .admin_wrapper .admin_msg_right .message div {
+  height: 91px;
+  overflow: hidden;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_msg .msg_footer {
+  text-align: right;
+  padding-top: 5px;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_msg .msg_footer .date {
+  color: orange;
+  margin-right: 15px;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_msg .msg_footer button {
+  background-color: red;
+  color: white;
+  padding: 3px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_msg .msg_footer button:hover {
+  background-color: #ff3535;
+}
+
 .App .footer {
   height: 7vh;
   display: -webkit-box;

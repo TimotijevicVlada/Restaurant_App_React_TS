@@ -22,11 +22,11 @@ export type UserProps = {
 export type MessagesProps = {
     id: number
     email: string
-    username: string
     title: string
     address: string
     phone: string | number
     message: string
+    date: string
 }
 
 type ProductsProps = {

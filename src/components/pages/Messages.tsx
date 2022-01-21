@@ -13,12 +13,12 @@ const Messages = () => {
     const formik = useFormik({
         initialValues: {
             id: Math.floor(Math.random() * 1000000),
-            username: user[0]?.username,
             email: user[0]?.email,
             title: "",
             address: "",
             phone: "",
-            message: ""
+            message: "",
+            date: new Date().toDateString()
         },
         validate,
         onSubmit: (values) => {
@@ -27,12 +27,12 @@ const Messages = () => {
                     ...messages,
                     {
                         id: values.id,
-                        username: values.username,
                         email: values.email,
                         title: values.title,
                         address: values.address,
                         phone: values.phone,
-                        message: values.message
+                        message: values.message,
+                        date: values.date
                     }
                 ])
                 setSuccessMessage(true);
