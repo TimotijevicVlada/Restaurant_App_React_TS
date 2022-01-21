@@ -391,6 +391,113 @@
   background-color: white;
 }
 
+.App .messages {
+  min-height: 86vh;
+  background: url(../image/pizza_background.jpg) repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0px;
+}
+
+.App .messages form {
+  width: 600px;
+  min-height: 500px;
+  background-color: #e8d3b9;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .messages form h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: 200;
+}
+
+.App .messages form .message_content .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+.App .messages form .message_content .inputs input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 5px 0px;
+  font-size: 16px;
+}
+
+.App .messages form .message_content .inputs input:focus {
+  outline: none;
+}
+
+.App .messages form .message_content .inputs textarea {
+  background-color: transparent;
+  font-family: "Poppins";
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 5px 0px;
+  font-size: 16px;
+}
+
+.App .messages form .message_content .inputs textarea:focus {
+  outline: none;
+}
+
+.App .messages form .message_content .error {
+  color: red;
+  font-size: 14px;
+}
+
+.App .messages form .message_content .btn {
+  margin-top: 20px;
+}
+
+.App .messages form .message_content .btn button {
+  width: 100%;
+  padding: 7px 0px;
+  font-size: 17px;
+  border: none;
+  background-color: brown;
+  color: white;
+  cursor: pointer;
+}
+
+.App .messages form .message_content .btn button:hover {
+  background-color: #a84343;
+}
+
+.App .messages form .message_content .error_message {
+  color: red;
+  text-align: center;
+}
+
+.App .messages form .message_content .success_message {
+  text-align: center;
+  color: green;
+}
+
 .App .user {
   min-height: 86vh;
   background: url(../image/pizza_background.jpg) repeat;
@@ -1040,6 +1147,13 @@
   border-bottom: 1px solid lightgray;
   text-align: center;
   padding: 7px 0px;
+}
+
+.App .admin .admin_messages {
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+  padding: 20px;
 }
 
 .App .footer {

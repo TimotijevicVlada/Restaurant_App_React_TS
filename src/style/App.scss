@@ -272,6 +272,83 @@
       }
     }
   }
+  .messages {
+    min-height: 86vh;
+    background: url(../image/pizza_background.jpg) repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    form {
+      width: 600px;
+      min-height: 500px;
+      background-color: #e8d3b9;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h2 {
+        text-align: center;
+        padding-bottom: 10px;
+        font-weight: 200;
+      }
+      .message_content {
+        .inputs {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+          input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid gray;
+            padding: 5px 0px;
+            font-size: 16px;
+            &:focus {
+              outline: none;
+            }
+          }
+          textarea {
+            background-color: transparent;
+            font-family: "Poppins";
+            border: none;
+            border-bottom: 1px solid gray;
+            padding: 5px 0px;
+            font-size: 16px;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+        .error {
+          color: red;
+          font-size: 14px;
+        }
+        .btn {
+          margin-top: 20px;
+          button {
+            width: 100%;
+            padding: 7px 0px;
+            font-size: 17px;
+            border: none;
+            background-color: brown;
+            color: white;
+            cursor: pointer;
+            &:hover {
+              background-color: rgb(168, 67, 67);
+            }
+          }
+        }
+        .error_message {
+          color: red;
+          text-align: center;
+        }
+        .success_message {
+          text-align: center;
+          color: green;
+        }
+      }
+    }
+  }
   .user {
     min-height: 86vh;
     background: url(../image/pizza_background.jpg) repeat;
@@ -705,6 +782,10 @@
           }
         }
       }
+    }
+    .admin_messages {
+      flex: 9;
+      padding: 20px;
     }
   }
   .footer {

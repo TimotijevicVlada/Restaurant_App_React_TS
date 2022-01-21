@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { ProductsContext } from '../context/Context';
-import { FoodProps } from '../context/Context';
+import { ProductsContext } from '../../context/Context';
+import { FoodProps } from '../../context/Context';
 
 const Cart = () => {
 
@@ -22,8 +22,6 @@ const Cart = () => {
             { ...elem, quantity: elem.quantity === 1 ? 1 : elem.quantity - 1 } : elem
         ))
     }
-
-    const emptyCartImageUrl = "https://www.pinclipart.com/picdir/middle/539-5398849_black-icon-food-outline-symbol-car-white-cartoon.png";
 
     return (
         <div className='cart'>

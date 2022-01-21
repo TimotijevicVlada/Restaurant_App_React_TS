@@ -19,6 +19,16 @@ export type UserProps = {
     password: string 
 }
 
+export type MessagesProps = {
+    id: number
+    email: string
+    username: string
+    title: string
+    address: string
+    phone: string | number
+    message: string
+}
+
 type ProductsProps = {
     food: FoodProps[]
     cart: FoodProps[]
@@ -31,6 +41,7 @@ type ProductsProps = {
     signupUsers: UserProps[]
     user: UserProps[]
     userToUpdate: UserProps[]
+    messages: MessagesProps[]
     setItemToDelete: React.Dispatch<React.SetStateAction<number | null>>
     setDeleteVisible: React.Dispatch<React.SetStateAction<boolean>>
     setAdminDetails: React.Dispatch<React.SetStateAction<FoodProps[]>>
@@ -40,6 +51,7 @@ type ProductsProps = {
     setSignupUsers: React.Dispatch<React.SetStateAction<UserProps[]>>
     setUser: React.Dispatch<React.SetStateAction<UserProps[]>>
     setUserToUpdate: React.Dispatch<React.SetStateAction<UserProps[]>>
+    setMessages: React.Dispatch<React.SetStateAction<MessagesProps[]>>
 }
 
 type ProductsContextProviderProps = {
@@ -60,7 +72,8 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const [itemToDelete, setItemToDelete] = useState<number | null>(null);
     const [signupUsers, setSignupUsers] = useState<UserProps[]>(users);
     const [user, setUser] = useState<UserProps[]>([]);
-    const [userToUpdate, setUserToUpdate] = useState<UserProps[]>([])
+    const [userToUpdate, setUserToUpdate] = useState<UserProps[]>([]);
+    const [messages, setMessages] = useState<MessagesProps[]>([]);
 
     //Print total quantity
     const printTotalQunatity = useCallback(() => {
@@ -96,7 +109,8 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
                 user: [],
                 userToUpdate: [],
                 productToUpdate: [],
-                adminDetails: []
+                adminDetails: [],
+                messages: []
             }));
         } else {
             const pizzaStorage = JSON.parse(localStorage.getItem("PizzaBar") || "");
@@ -107,6 +121,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             setUserToUpdate(pizzaStorage.userToUpdate);
             setProductToUpdate(pizzaStorage.productToUpdate);
             setAdminDetails(pizzaStorage.adminDetails);
+            setMessages(pizzaStorage.messages);
         }
     }
     useEffect(() => {
@@ -122,9 +137,10 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             user: user,
             userToUpdate: userToUpdate,
             productToUpdate: productToUpdate,
-            adminDetails: adminDetails
+            adminDetails: adminDetails,
+            messages: messages
         }));
-    }, [cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails])
+    }, [cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails, messages])
 
     useEffect(() => {
         savePizzaStorage();
@@ -141,7 +157,8 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             itemToDelete, setItemToDelete,
             signupUsers, setSignupUsers,
             user, setUser,
-            userToUpdate, setUserToUpdate
+            userToUpdate, setUserToUpdate,
+            messages, setMessages
         }}>
             {children}
         </ProductsContext.Provider>
