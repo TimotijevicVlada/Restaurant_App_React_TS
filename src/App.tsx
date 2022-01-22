@@ -5,7 +5,8 @@ import Cart from './components/pages/Cart';
 import Admin from './components/admin/Admin';
 import CreateProduct from './components/admin/CreateProduct';
 import AdminAllProducts from './components/admin/AdminAllProducts';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//I am using HashRouter instead BrowserRouter because of the error on the netlify!
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from './components/pages/Footer';
 import UpdateProduct from './components/admin/UpdateProduct';
 import DetailsProduct from './components/admin/DetailsProduct';
