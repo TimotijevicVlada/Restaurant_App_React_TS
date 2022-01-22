@@ -29,6 +29,13 @@ const Products = () => {
                     <h1 className='header_Second_title'>Made for you</h1>
                     <div className='header_order'>Order now</div>
                     <div className='header_number'>+38163341212</div>
+                    <div className='social_media'>
+                        <i className="fab fa-instagram"></i>
+                        <i className="fab fa-facebook"></i>
+                        <i className="fab fa-twitter"></i>
+                        <i className="fab fa-linkedin-in"></i>
+                        <i className="fab fa-tiktok"></i>
+                    </div>
                 </div>
             </div>
             <div className='products'>

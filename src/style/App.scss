@@ -8,6 +8,7 @@
 .App {
   .navbar {
     position: sticky;
+    z-index: 1;
     top: 0;
     display: flex;
     justify-content: space-evenly;
@@ -87,6 +88,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      position: relative;
       .header_text {
         margin-right: 30px;
         width: 40%;
@@ -103,6 +105,35 @@
         .header_order,
         .header_number {
           font-size: 22px;
+        }
+        .social_media {
+          position: absolute;
+          bottom: 30px;
+          right: 30px;
+          i {
+            font-size: 25px;
+            margin-left: 10px;
+            cursor: pointer;
+            &:hover {
+              color: white;
+
+            }
+          }
+          .fa-instagram {
+            color: #e95950;
+          }
+          .fa-facebook {
+            color: #4267B2;
+          }
+          .fa-twitter {
+            color: #1DA1F2;
+          }
+          .fa-linkedin-in {
+            color: #2867B2;
+          }
+          .fa-tiktok {
+            color: #FE2C55;;
+          }
         }
       }
     }
@@ -165,7 +196,65 @@
       }
     }
   }
-
+  .about {
+    min-height: 86vh;
+    background: url(../image/pizza_background.jpg) repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    .about_container {
+      padding: 20px;
+      width: 900px;
+      min-height: 80vh;
+      background-color: #e8d3b9;
+      display: flex;
+      .about_left {
+        width: 50%;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h2 {
+          text-align: center;
+          font-weight: 200;
+        }
+        .about_text_wrapper {
+          p {
+            text-indent: 20px;
+            text-align: justify;
+            margin-top: 20px;
+          }
+          
+        }
+      }
+      .about_right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .contact_info {
+          div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            span {
+              i {
+                font-size: 20px;
+                color: brown;
+              }
+            }
+          }
+        }
+        .map_wrapper {
+          .map {
+            width: 100%;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
   .cart {
     display: flex;
     .cart_items {
@@ -348,6 +437,10 @@
         }
       }
     }
+  }
+  .favorite {
+    min-height: 86vh;
+    text-align: center;
   }
   .user {
     min-height: 86vh;

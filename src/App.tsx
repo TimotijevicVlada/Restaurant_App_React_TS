@@ -16,6 +16,8 @@ import User from './components/user/UserInfo';
 import UserUpdate from './components/user/UserUpdate';
 import Messages from './components/pages/Messages';
 import AdminMessages from './components/admin/AdminMessages';
+import About from './components/pages/About';
+import Favorite from './components/pages/Favorite';
 
 function App() {
 
@@ -26,8 +28,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/messages" element={<Messages />}/>
+          <Route path="/favorite" element={<Favorite />}/>
           <Route path="/user" element={<User />}/>
           <Route path="/userupdate" element={<UserUpdate />}/>
           <Route path="/login" element={<Login />} />

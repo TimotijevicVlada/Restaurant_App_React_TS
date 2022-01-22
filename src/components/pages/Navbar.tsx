@@ -14,8 +14,8 @@ const Navbar = () => {
             </div>
             <div className='menu'>
                 <Link className='link' to="/">Home</Link>
-                <Link className='link about' to="/about">About</Link>
-                <Link to="/messages" className='link'>MessageUs</Link>
+                <Link className='link' to="/about">About</Link>
+                <Link className='link' to="/messages" >MessageUs</Link>
                 <Link className='link' to="/favorite">Favorite</Link>
                 <Link className='link cart' to="/cart">Cart {totalQuantity > 0 && <span className='total_quantity'>{totalQuantity}</span>} </Link>
                 <Link className='link' to="/review"></Link>
