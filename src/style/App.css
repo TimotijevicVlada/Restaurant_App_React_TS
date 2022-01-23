@@ -49,6 +49,31 @@
   text-decoration: underline;
 }
 
+.App .navbar .menu .fav_menu {
+  position: relative;
+}
+
+.App .navbar .menu .fav_menu .favorite_quantity {
+  position: absolute;
+  right: -12px;
+  top: -8px;
+  background-color: green;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .App .navbar .menu .cart_menu {
   position: relative;
 }
@@ -194,6 +219,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -202,6 +231,14 @@
           align-items: center;
   min-height: 93vh;
   background: url(../image/pizza_background.jpg) repeat;
+}
+
+.App .home .products .products_title {
+  font-weight: 200;
+  background-color: brown;
+  padding: 5px 20px;
+  margin: 20px 0px 10px 0px;
+  color: white;
 }
 
 .App .home .products .products_wrapper {
@@ -257,18 +294,24 @@
           justify-content: space-between;
 }
 
-.App .home .products .products_wrapper .food .event button {
-  background-color: beige;
-  color: white;
+.App .home .products .products_wrapper .food .event i {
   border: none;
-  padding: 5px 10px;
-  margin-right: 7px;
-  color: brown;
+  margin-right: 20px;
+  color: beige;
   cursor: pointer;
+  font-size: 25px;
 }
 
-.App .home .products .products_wrapper .food .event button:hover {
-  background-color: khaki;
+.App .home .products .products_wrapper .food .event .fa-shopping-cart:hover {
+  color: black;
+}
+
+.App .home .products .products_wrapper .food .event .fa-heart {
+  color: #39a039;
+}
+
+.App .home .products .products_wrapper .food .event .fa-heart:hover {
+  color: black;
 }
 
 .App .home .products .products_wrapper .food .event .food_price {
@@ -377,6 +420,11 @@
   margin: 20px;
 }
 
+.App .cart .cart_items .cart_title {
+  text-align: center;
+  font-weight: 200;
+}
+
 .App .cart .cart_items .empty_cart {
   text-align: center;
   padding: 100px 0px;
@@ -384,11 +432,11 @@
 }
 
 .App .cart .cart_items .empty_cart i {
-  font-size: 80px;
+  font-size: 50px;
 }
 
 .App .cart .cart_items .empty_cart .empty_cart_text {
-  font-size: 30px;
+  font-size: 22px;
 }
 
 .App .cart .cart_items .cart_item {
@@ -642,23 +690,32 @@
           align-items: center;
 }
 
-.App .favorite .rec-carousel-wrapper {
+.App .favorite .favorite_wrapper {
+  background-color: rgba(232, 211, 185, 0.9);
   width: 1200px;
   height: 80vh;
+}
+
+.App .favorite .favorite_wrapper .favorite_title {
+  font-weight: 200;
+  padding: 20px 0px;
+}
+
+.App .favorite .favorite_wrapper .rec-carousel-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(232, 211, 185, 0.9);
+  margin-top: 70px;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel {
   border-radius: 15px;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-arrow {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-arrow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -679,11 +736,11 @@
   cursor: pointer;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-arrow:hover {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-arrow:hover {
   background-color: #ebebc7;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -693,10 +750,8 @@
   cursor: pointer;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item {
-  border: 1px solid black;
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item {
   width: 350px;
-  height: 520px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -712,42 +767,62 @@
           align-items: center;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item img {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item img {
   width: 95%;
   height: 200px;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .favorite_name {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .favorite_name {
   font-size: 22px;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .favorite_price {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .favorite_price {
   font-size: 30px;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .stars i {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .stars i {
   color: goldenrod;
   font-size: 20px;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events {
   margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 0px 20px;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events i {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events i {
   margin: 0px 5px;
   font-size: 30px;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events .fa-shopping-cart {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events .fa-shopping-cart {
   color: brown;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events .fa-heart {
-  color: yellow;
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events .fa-eye {
+  color: olivedrab;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-pagination {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events .fa-trash-alt {
+  color: black;
+  margin-left: 30px;
+}
+
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .fav_events .fa-trash-alt:hover {
+  color: red;
+}
+
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -756,7 +831,7 @@
           align-items: center;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-pagination .rec-dot {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-pagination .rec-dot {
   border: 1px solid brown;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -764,10 +839,23 @@
   height: 12px;
 }
 
-.App .favorite .rec-carousel-wrapper .rec-pagination .rec-dot_active {
+.App .favorite .favorite_wrapper .rec-carousel-wrapper .rec-pagination .rec-dot_active {
   width: 14px;
   height: 14px;
   background-color: brown;
+}
+
+.App .favorite .favorite_wrapper .empty_favorite {
+  margin-top: 100px;
+  color: gray;
+}
+
+.App .favorite .favorite_wrapper .empty_favorite .fa-heart {
+  font-size: 50px;
+}
+
+.App .favorite .favorite_wrapper .empty_favorite div {
+  font-size: 22px;
 }
 
 .App .user {
@@ -1431,6 +1519,12 @@
 .App .admin .admin_messages h2 {
   text-align: center;
   font-weight: 200;
+}
+
+.App .admin .admin_messages .admin_messages_content .admin_no_messages {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 22px;
 }
 
 .App .admin .admin_messages .admin_messages_content .admin_msg {

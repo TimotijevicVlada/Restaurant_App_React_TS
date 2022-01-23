@@ -14,9 +14,9 @@ export type FoodProps = {
 
 export type UserProps = {
     id: number
-    username: string 
-    email: string 
-    password: string 
+    username: string
+    email: string
+    password: string
 }
 
 export type MessagesProps = {
@@ -107,6 +107,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
         if (localStorage.getItem("PizzaBar") === null) {
             localStorage.setItem("PizzaBar", JSON.stringify({
                 food: [],
+                favorite: [],
                 cart: [],
                 signupUsers: [],
                 user: [],
@@ -118,6 +119,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
         } else {
             const pizzaStorage = JSON.parse(localStorage.getItem("PizzaBar") || "");
             setFood(pizzaStorage.food);
+            setFavorite(pizzaStorage.favorite);
             setCart(pizzaStorage.cart);
             setSignupUsers(pizzaStorage.users);
             setUser(pizzaStorage.user);
@@ -135,6 +137,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const savePizzaStorage = useCallback(() => {
         localStorage.setItem("PizzaBar", JSON.stringify({
             food: food,
+            favorite: favorite,
             cart: cart,
             users: signupUsers,
             user: user,
@@ -143,7 +146,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             adminDetails: adminDetails,
             messages: messages
         }));
-    }, [cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails, messages])
+    }, [favorite, cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails, messages])
 
     useEffect(() => {
         savePizzaStorage();

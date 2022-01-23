@@ -26,6 +26,7 @@ const Cart = () => {
     return (
         <div className='cart'>
             <div className='cart_items'>
+                <h2 className='cart_title'>Cart</h2>
                 {cart.length < 1 ? <div className='empty_cart'><i className="fas fa-shopping-cart"></i><div className='empty_cart_text'>Your cart is empty!</div></div>
                     : cart.map((item, index) => (
                         <div className='cart_item' key={index}>

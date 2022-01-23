@@ -53,6 +53,7 @@ const Products = () => {
                 </div>
             </div>
             <div className='products'>
+                <h2 className='products_title'>Our offer</h2>
                 <div className='products_wrapper'>
                     {food.map((item, index) => (
                         <div key={index} className='food'>
@@ -67,8 +68,8 @@ const Products = () => {
                             <h3 className='food_name'>{item.name}</h3>
                             <div className='event'>
                                 <div>
-                                    <button onClick={() => addToCart(item)}>Add to cart</button>
-                                    <button onClick={() => addToFav(item)}>Add to Fav</button>
+                                    <i className='fas fa-shopping-cart' onClick={() => addToCart(item)}></i>
+                                    <i className='fas fa-heart' onClick={() => addToFav(item)}></i>
                                 </div>
                                 <span className='food_price'>${item.price}</span>
                             </div>

@@ -4,7 +4,7 @@ import {ProductsContext} from "../../context/Context";
 
 const Navbar = () => {
 
-    const {totalQuantity, user, setUser} = useContext(ProductsContext);
+    const {totalQuantity, user, setUser, favorite} = useContext(ProductsContext);
 
     return (
         <nav className='navbar'>
@@ -16,7 +16,7 @@ const Navbar = () => {
                 <Link className='link' to="/">Home</Link>
                 <Link className='link' to="/about">About</Link>
                 <Link className='link' to="/messages" >MessageUs</Link>
-                <Link className='link' to="/favorite">Favorite</Link>
+                <Link className='link fav_menu' to="/favorite">Favorite {favorite.length > 0 && <span className='favorite_quantity'>{favorite.length}</span>}</Link>
                 <Link className='link cart_menu' to="/cart">Cart {totalQuantity > 0 && <span className='total_quantity'>{totalQuantity}</span>} </Link>
                 <Link className='link' to="/review"></Link>
             </div>
