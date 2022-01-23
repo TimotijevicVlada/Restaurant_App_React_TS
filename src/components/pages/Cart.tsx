@@ -42,8 +42,8 @@ const Cart = () => {
                     ))}
             </div>
             <div className='cart_total'>
-                <h2 className='total_title'>Summary</h2>
                 <div className='total_info'>
+                    <h2 className='total_title'>Summary</h2>
                     <span onClick={() => setCart([])} className='delete_all'>DELETE ALL!</span>
                     <div className='total_products'>Total products: <span>{totalQuantity}</span></div>
                     <div className='total_price'>Total price: <span>${totalPrice}</span></div>

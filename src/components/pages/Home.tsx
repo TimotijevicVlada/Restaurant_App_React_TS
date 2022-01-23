@@ -5,7 +5,7 @@ import { FoodProps } from "../../context/Context";
 
 const Products = () => {
 
-    const { food, cart, setCart } = useContext(ProductsContext);
+    const { food, cart, setCart, favorite, setFavorite } = useContext(ProductsContext);
 
     const addToCart = (item: FoodProps) => {
         const exist = cart.find(elem => elem.id === item.id);
@@ -17,6 +17,20 @@ const Products = () => {
             setCart([...cart, { ...item }])
         }
     }
+
+    const addToFav = (item: FoodProps) => {
+        const exist = favorite.find(elem => elem.id === item.id);
+        if (exist) {
+            alert("This product is already in your Favorite!");
+        } else {
+            setFavorite([
+                ...favorite,
+                item
+            ])
+        }
+    }
+
+    console.log(favorite);
 
     return (
         <div className='home'>
@@ -52,7 +66,10 @@ const Products = () => {
                             </div>
                             <h3 className='food_name'>{item.name}</h3>
                             <div className='event'>
-                                <button onClick={() => addToCart(item)}>Add to cart</button>
+                                <div>
+                                    <button onClick={() => addToCart(item)}>Add to cart</button>
+                                    <button onClick={() => addToFav(item)}>Add to Fav</button>
+                                </div>
                                 <span className='food_price'>${item.price}</span>
                             </div>
                         </div>

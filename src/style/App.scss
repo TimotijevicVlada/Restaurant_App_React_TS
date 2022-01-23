@@ -32,7 +32,7 @@
           text-decoration: underline;
         }
       }
-      .cart {
+      .cart_menu {
         position: relative;
         .total_quantity {
           position: absolute;
@@ -116,23 +116,22 @@
             cursor: pointer;
             &:hover {
               color: white;
-
             }
           }
           .fa-instagram {
             color: #e95950;
           }
           .fa-facebook {
-            color: #4267B2;
+            color: #4267b2;
           }
           .fa-twitter {
-            color: #1DA1F2;
+            color: #1da1f2;
           }
           .fa-linkedin-in {
-            color: #2867B2;
+            color: #2867b2;
           }
           .fa-tiktok {
-            color: #FE2C55;;
+            color: #fe2c55;
           }
         }
       }
@@ -154,7 +153,6 @@
           flex-direction: column;
           margin: 5px;
           padding: 10px;
-
           background-color: brown;
           color: white;
           img {
@@ -181,7 +179,7 @@
               color: white;
               border: none;
               padding: 5px 10px;
-
+              margin-right: 7px;
               color: brown;
               cursor: pointer;
               &:hover {
@@ -207,7 +205,7 @@
       padding: 20px;
       width: 900px;
       min-height: 80vh;
-      background-color: #e8d3b9;
+      background-color: rgba(232, 211, 185, 0.9);
       display: flex;
       .about_left {
         width: 50%;
@@ -225,7 +223,6 @@
             text-align: justify;
             margin-top: 20px;
           }
-          
         }
       }
       .about_right {
@@ -257,10 +254,13 @@
   }
   .cart {
     display: flex;
+    min-height: 86vh;
+    background: url(../image/pizza_background.jpg) repeat;
     .cart_items {
       flex: 9;
-      min-height: 86vh;
       padding: 10px;
+      background-color: rgba(232, 211, 185, 0.9);
+      margin: 20px;
       .empty_cart {
         text-align: center;
         padding: 100px 0px;
@@ -312,16 +312,18 @@
     .cart_total {
       flex: 3;
       padding: 0px 10px;
-      .total_title {
-        text-align: center;
-        font-weight: 200;
-      }
       .total_info {
-        background-color: crimson;
+        background-color: brown;
         padding: 10px;
         text-align: center;
         display: flex;
         flex-direction: column;
+        margin-top: 20px;
+        .total_title {
+          text-align: center;
+          font-weight: 200;
+          color: white;
+        }
         .delete_all {
           align-self: flex-end;
           background-color: whitesmoke;
@@ -371,7 +373,7 @@
     form {
       width: 600px;
       min-height: 500px;
-      background-color: #e8d3b9;
+      background-color: rgba(232, 211, 185, 0.9);
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -400,7 +402,7 @@
             background-color: transparent;
             font-family: "Poppins";
             border: none;
-            border-bottom: 1px solid gray;
+            border-bottom: 1px solid rgb(5, 2, 2);
             padding: 5px 0px;
             font-size: 16px;
             &:focus {
@@ -441,6 +443,96 @@
   .favorite {
     min-height: 86vh;
     text-align: center;
+    background: url(../image/pizza_background.jpg) repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .rec-carousel-wrapper {
+      width: 1200px;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      background-color: rgba(232, 211, 185, 0.9);
+      .rec-carousel {
+        border-radius: 15px;
+        .rec-arrow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 30px;
+          color: brown;
+          background-color: transparent;
+          border: none;
+          font-size: 40px;
+          outline: none;
+          box-shadow: none;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(235, 235, 199);
+          }
+        }
+        .rec-slider-container {
+          .rec-carousel-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            .item {
+              border: 1px solid black;
+              width: 350px;
+              height: 520px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 95%;
+                height: 200px;
+              }
+              .favorite_name {
+                font-size: 22px;
+              }
+              .favorite_price {
+                font-size: 30px;
+              }
+              .stars {
+                i {
+                  color: goldenrod;
+                  font-size: 20px;
+                }
+              }
+              .fav_events {
+                margin-top: 20px;
+                i {
+                  margin: 0px 5px;
+                  font-size: 30px;
+                }
+                .fa-shopping-cart {
+                  color: brown;
+                }
+                .fa-heart {
+                  color: yellow;
+                }
+              }
+            }
+          }
+        }
+      }
+      .rec-pagination {
+        display: flex;
+        align-items: center;
+        .rec-dot {
+          border: 1px solid brown;
+          box-shadow: none;
+          width: 12px;
+          height: 12px;
+        }
+        .rec-dot_active {
+          width: 14px;
+          height: 14px;
+          background-color: brown;
+        }
+      }
+    }
   }
   .user {
     min-height: 86vh;
@@ -451,7 +543,7 @@
     .user_container {
       width: 400px;
       min-height: 400px;
-      background-color: #e8d3b9;
+      background-color: rgba(232, 211, 185, 0.9);
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -497,7 +589,7 @@
     form {
       width: 400px;
       min-height: 400px;
-      background-color: #e8d3b9;
+      background-color: rgba(232, 211, 185, 0.9);
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -559,7 +651,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background-color: #e8d3b9;
+      background-color: rgba(232, 211, 185, 0.9);
       h2 {
         text-align: center;
         padding: 10px 0px;

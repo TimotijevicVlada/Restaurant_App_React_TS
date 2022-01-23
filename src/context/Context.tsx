@@ -32,6 +32,7 @@ export type MessagesProps = {
 type ProductsProps = {
     food: FoodProps[]
     cart: FoodProps[]
+    favorite: FoodProps[]
     productToUpdate: FoodProps[]
     totalQuantity: number
     totalPrice: number
@@ -52,6 +53,7 @@ type ProductsProps = {
     setUser: React.Dispatch<React.SetStateAction<UserProps[]>>
     setUserToUpdate: React.Dispatch<React.SetStateAction<UserProps[]>>
     setMessages: React.Dispatch<React.SetStateAction<MessagesProps[]>>
+    setFavorite: React.Dispatch<React.SetStateAction<FoodProps[]>>
 }
 
 type ProductsContextProviderProps = {
@@ -74,6 +76,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const [user, setUser] = useState<UserProps[]>([]);
     const [userToUpdate, setUserToUpdate] = useState<UserProps[]>([]);
     const [messages, setMessages] = useState<MessagesProps[]>([]);
+    const [favorite, setFavorite] = useState<FoodProps[]>([]);
 
     //Print total quantity
     const printTotalQunatity = useCallback(() => {
@@ -158,7 +161,8 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             signupUsers, setSignupUsers,
             user, setUser,
             userToUpdate, setUserToUpdate,
-            messages, setMessages
+            messages, setMessages,
+            favorite, setFavorite
         }}>
             {children}
         </ProductsContext.Provider>
