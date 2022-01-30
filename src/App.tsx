@@ -19,6 +19,7 @@ import Messages from './components/pages/Messages';
 import AdminMessages from './components/admin/AdminMessages';
 import About from './components/pages/About';
 import Favorite from './components/pages/Favorite';
+import Review from './components/pages/Review';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/messages" element={<Messages />}/>
+          <Route path="/review" element={<Review />}/>
           <Route path="/favorite" element={<Favorite />}/>
           <Route path="/user" element={<User />}/>
           <Route path="/userupdate" element={<UserUpdate />}/>

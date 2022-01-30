@@ -475,6 +475,92 @@
       }
     }
   }
+  .review {
+    min-height: 86vh;
+    background: url(../image/pizza_background.jpg) repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    .review_wrapper {
+      background-color: rgba(232, 211, 185, 0.9);
+      width: 1200px;
+      height: 80vh;
+      .review_title {
+        font-weight: 200;
+        text-align: center;
+        padding: 20px 0px;
+      }
+      .rec-carousel-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 70px;
+        .rec-carousel {
+          .rec-arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            color: brown;
+            background-color: transparent;
+            border: none;
+            font-size: 40px;
+            outline: none;
+            box-shadow: none;
+            cursor: pointer;
+            &:hover {
+              background-color: rgb(235, 235, 199);
+            }
+          }
+          .rec-slider-container {
+            .rec-carousel-item {
+              display: flex;
+              align-items: center;
+              .item {
+                width: 350px;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(209, 156, 156);
+                padding: 20px;
+                .review_img {
+                  height: 100px;
+                  img {
+                    width: 100px;
+                    border-radius: 50%;
+                  }
+                }
+                .review_msg {
+                  height: 100px;
+                }
+                .review_date {
+                  width: 100%;
+                  text-align: right;
+                }
+              }
+            }
+          }
+        }
+        .rec-pagination {
+          display: flex;
+          align-items: center;
+          .rec-dot {
+            border: 1px solid brown;
+            box-shadow: none;
+            width: 12px;
+            height: 12px;
+          }
+          .rec-dot_active {
+            width: 14px;
+            height: 14px;
+            background-color: brown;
+          }
+        }
+      }
+    }
+  }
   .favorite {
     min-height: 86vh;
     text-align: center;
@@ -588,7 +674,7 @@
         margin-top: 100px;
         color: gray;
         .fa-heart {
-            font-size: 50px;
+          font-size: 50px;
         }
         div {
           font-size: 22px;

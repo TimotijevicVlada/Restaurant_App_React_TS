@@ -675,6 +675,138 @@
   color: green;
 }
 
+.App .review {
+  min-height: 86vh;
+  background: url(../image/pizza_background.jpg) repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0px;
+}
+
+.App .review .review_wrapper {
+  background-color: rgba(232, 211, 185, 0.9);
+  width: 1200px;
+  height: 80vh;
+}
+
+.App .review .review_wrapper .review_title {
+  font-weight: 200;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 70px;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px;
+  color: brown;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-arrow:hover {
+  background-color: #ebebc7;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item {
+  width: 350px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #d19c9c;
+  padding: 20px;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .review_img {
+  height: 100px;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .review_img img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .review_msg {
+  height: 100px;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .review_date {
+  width: 100%;
+  text-align: right;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-pagination .rec-dot {
+  border: 1px solid brown;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 12px;
+  height: 12px;
+}
+
+.App .review .review_wrapper .rec-carousel-wrapper .rec-pagination .rec-dot_active {
+  width: 14px;
+  height: 14px;
+  background-color: brown;
+}
+
 .App .favorite {
   min-height: 86vh;
   text-align: center;

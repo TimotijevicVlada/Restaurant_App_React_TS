@@ -1,6 +1,7 @@
-import { createContext, useState, useCallback, useEffect } from "react";
+import React, { createContext, useState, useCallback, useEffect } from "react";
 import { products } from "../data/data";
 import { users } from "../data/usersData";
+import { reviewMessages } from "../data/review";
 
 export type FoodProps = {
     id: number
@@ -29,6 +30,14 @@ export type MessagesProps = {
     date: string
 }
 
+export type Review = {
+    id: number
+    name: string
+    url: string
+    message: string
+    date: string
+}
+
 type ProductsProps = {
     food: FoodProps[]
     cart: FoodProps[]
@@ -43,6 +52,8 @@ type ProductsProps = {
     user: UserProps[]
     userToUpdate: UserProps[]
     messages: MessagesProps[]
+    review: Review[]
+    setReview: React.Dispatch<React.SetStateAction<Review[]>>
     setItemToDelete: React.Dispatch<React.SetStateAction<number | null>>
     setDeleteVisible: React.Dispatch<React.SetStateAction<boolean>>
     setAdminDetails: React.Dispatch<React.SetStateAction<FoodProps[]>>
@@ -77,6 +88,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const [userToUpdate, setUserToUpdate] = useState<UserProps[]>([]);
     const [messages, setMessages] = useState<MessagesProps[]>([]);
     const [favorite, setFavorite] = useState<FoodProps[]>([]);
+    const [review, setReview] = useState<Review[]>(reviewMessages);
 
     //Print total quantity
     const printTotalQunatity = useCallback(() => {
@@ -165,7 +177,8 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             user, setUser,
             userToUpdate, setUserToUpdate,
             messages, setMessages,
-            favorite, setFavorite
+            favorite, setFavorite,
+            review, setReview
         }}>
             {children}
         </ProductsContext.Provider>
