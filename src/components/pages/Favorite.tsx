@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Carousel from "react-elastic-carousel";
 import { ProductsContext } from "../../context/Context";
-import { FoodProps } from '../../context/Context';
+import { FoodProps } from '../../types/Types'; 
 
 const Favorite = () => {
 

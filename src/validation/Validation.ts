@@ -1,4 +1,4 @@
-import { FoodProps } from "../context/Context";
+import { FoodProps } from "../types/Types";
 
 //I need optional keys inside this object
 type ValidationProps = {

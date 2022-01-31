@@ -733,6 +733,7 @@
   background-color: gray;
   color: white;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .App .review .review_wrapper .add_review_btn:hover {
@@ -754,12 +755,12 @@
 }
 
 .App .review .review_wrapper .add_review textarea {
+  border: 1px solid gray;
   background-color: transparent;
-  border: none;
   width: 350px;
   height: 50px;
-  background-color: #eec2c2;
   padding: 5px;
+  font-size: 15px;
 }
 
 .App .review .review_wrapper .add_review textarea:focus {

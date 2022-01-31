@@ -2,41 +2,11 @@ import React, { createContext, useState, useCallback, useEffect } from "react";
 import { products } from "../data/data";
 import { users } from "../data/usersData";
 import { reviewMessages } from "../data/review";
+import { FoodProps } from "../types/Types";
+import { UserProps } from "../types/Types";
+import { MessagesProps } from "../types/Types";
+import { Review } from "../types/Types";
 
-export type FoodProps = {
-    id: number
-    name: string
-    url: string
-    price: number
-    quantity: number
-    ingredients: string
-    description: string
-}
-
-export type UserProps = {
-    id: number
-    username: string
-    email: string
-    password: string
-}
-
-export type MessagesProps = {
-    id: number
-    email: string
-    title: string
-    address: string
-    phone: string | number
-    message: string
-    date: string
-}
-
-export type Review = {
-    id: number
-    name: string
-    url: string
-    message: string
-    date: string
-}
 
 type ProductsProps = {
     food: FoodProps[]

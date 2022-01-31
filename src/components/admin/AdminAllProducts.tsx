@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../../context/Context';
-import { FoodProps } from '../../context/Context';
+import { FoodProps } from '../../types/Types';
 import { Link } from 'react-router-dom';
 import DeleteWindow from './DeleteWindow';
 

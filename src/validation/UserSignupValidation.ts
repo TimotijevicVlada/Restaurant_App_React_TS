@@ -1,4 +1,4 @@
-import { UserProps } from "../context/Context"
+import { UserProps } from "../types/Types";
 
 
 export const validate = (values: UserProps) => {

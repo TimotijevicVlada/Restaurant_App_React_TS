@@ -1,4 +1,4 @@
-import { MessagesProps } from "../context/Context";
+import { MessagesProps } from "../types/Types";
 
 //I need optional keys inside this object
 type ValidationProps = {

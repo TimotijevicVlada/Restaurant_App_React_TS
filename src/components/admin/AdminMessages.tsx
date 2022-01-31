@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../../context/Context';
-import { MessagesProps } from '../../context/Context';
+import { MessagesProps } from '../../types/Types';
 
 const AdminMessages = () => {
 
