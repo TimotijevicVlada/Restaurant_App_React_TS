@@ -88,7 +88,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const [userToUpdate, setUserToUpdate] = useState<UserProps[]>([]);
     const [messages, setMessages] = useState<MessagesProps[]>([]);
     const [favorite, setFavorite] = useState<FoodProps[]>([]);
-    const [review, setReview] = useState<Review[]>(reviewMessages);
+    const [review, setReview] = useState<Review[]>(reviewMessages.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1));
 
     //Print total quantity
     const printTotalQunatity = useCallback(() => {
@@ -118,15 +118,9 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const getPizzaStorage = () => {
         if (localStorage.getItem("PizzaBar") === null) {
             localStorage.setItem("PizzaBar", JSON.stringify({
-                food: [],
-                favorite: [],
-                cart: [],
-                signupUsers: [],
-                user: [],
-                userToUpdate: [],
-                productToUpdate: [],
-                adminDetails: [],
-                messages: []
+                food: [], favorite: [], cart: [], signupUsers: [], user: [],
+                userToUpdate: [], productToUpdate: [], adminDetails: [], messages: [],
+                review: []
             }));
         } else {
             const pizzaStorage = JSON.parse(localStorage.getItem("PizzaBar") || "");
@@ -139,6 +133,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             setProductToUpdate(pizzaStorage.productToUpdate);
             setAdminDetails(pizzaStorage.adminDetails);
             setMessages(pizzaStorage.messages);
+            setReview(pizzaStorage.review);
         }
     }
     useEffect(() => {
@@ -156,9 +151,10 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             userToUpdate: userToUpdate,
             productToUpdate: productToUpdate,
             adminDetails: adminDetails,
-            messages: messages
+            messages: messages,
+            review: review.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1)
         }));
-    }, [favorite, cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails, messages])
+    }, [favorite, cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails, messages, review])
 
     useEffect(() => {
         savePizzaStorage();

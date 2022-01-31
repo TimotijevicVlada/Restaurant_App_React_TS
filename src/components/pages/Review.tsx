@@ -1,10 +1,12 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ProductsContext } from '../../context/Context';
 import Carousel from "react-elastic-carousel";
+import AddReview from './AddReview';
 
 const Review = () => {
 
     const { review, setReview } = useContext(ProductsContext);
+    const [addVisibility, setAddVisibility] = useState(false);
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
@@ -13,12 +15,16 @@ const Review = () => {
         { width: 1200, itemsToShow: 3 },
     ];
 
-    console.log(review);
+    useEffect(() => {
+        setReview(review.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1));
+    }, [review, setReview])
+
 
     return (
         <div className='review'>
             <div className='review_wrapper'>
-                <h2 className='review_title'>Reviews</h2>
+                <h2 className='review_title'>Reviews <span className='review_number'>{review.length}</span></h2>
+                {addVisibility ? <AddReview /> : <button className='add_review_btn' onClick={() => setAddVisibility(true)}>Add your review</button>}
                 {review.length > 0 ? <Carousel isRTL={false} breakPoints={breakPoints}>
                     {review.map(item => (
                         <div className='item' key={item.id}>

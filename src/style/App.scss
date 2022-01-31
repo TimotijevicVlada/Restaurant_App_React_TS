@@ -486,15 +486,69 @@
       background-color: rgba(232, 211, 185, 0.9);
       width: 1200px;
       height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       .review_title {
         font-weight: 200;
         text-align: center;
         padding: 20px 0px;
+        display: flex;
+        align-items: center;
+        .review_number {
+          font-size: 17px;
+          background-color: gray;
+          color: white;
+          padding: 0px 10px;
+          border-radius: 20px;
+          margin-left: 5px;
+        }
+      }
+      .add_review_btn {
+        padding: 5px 10px;
+        border: none;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(165, 165, 165);
+        }
+      }
+      .add_review {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        textarea {
+          background-color: transparent;
+          border: none;
+          width: 350px;
+          height: 50px;
+          background-color: rgb(238, 194, 194);
+          padding: 5px;
+          &:focus {
+            outline: none;
+          }
+        }
+        button {
+          width: 350px;
+          border: none;
+          padding: 5px 0px;
+          background-color: gray;
+          color: white;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(165, 165, 165);
+          }
+        }
+        .error {
+          color: red;
+        }
       }
       .rec-carousel-wrapper {
         display: flex;
         justify-content: center;
-        margin-top: 70px;
+        margin-top: 20px;
         .rec-carousel {
           .rec-arrow {
             display: flex;
@@ -535,9 +589,15 @@
                 .review_msg {
                   height: 100px;
                 }
+                .review_name {
+                  h3 {
+                    font-weight: 200;
+                  }
+                }
                 .review_date {
                   width: 100%;
                   text-align: right;
+                  color: green;
                 }
               }
             }

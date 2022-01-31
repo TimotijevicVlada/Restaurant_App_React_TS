@@ -694,12 +694,93 @@
   background-color: rgba(232, 211, 185, 0.9);
   width: 1200px;
   height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .App .review .review_wrapper .review_title {
   font-weight: 200;
   text-align: center;
   padding: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .review .review_wrapper .review_title .review_number {
+  font-size: 17px;
+  background-color: gray;
+  color: white;
+  padding: 0px 10px;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.App .review .review_wrapper .add_review_btn {
+  padding: 5px 10px;
+  border: none;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+}
+
+.App .review .review_wrapper .add_review_btn:hover {
+  background-color: #a5a5a5;
+}
+
+.App .review .review_wrapper .add_review {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .review .review_wrapper .add_review textarea {
+  background-color: transparent;
+  border: none;
+  width: 350px;
+  height: 50px;
+  background-color: #eec2c2;
+  padding: 5px;
+}
+
+.App .review .review_wrapper .add_review textarea:focus {
+  outline: none;
+}
+
+.App .review .review_wrapper .add_review button {
+  width: 350px;
+  border: none;
+  padding: 5px 0px;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+}
+
+.App .review .review_wrapper .add_review button:hover {
+  background-color: #a5a5a5;
+}
+
+.App .review .review_wrapper .add_review .error {
+  color: red;
 }
 
 .App .review .review_wrapper .rec-carousel-wrapper {
@@ -709,7 +790,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-arrow {
@@ -779,9 +860,14 @@
   height: 100px;
 }
 
+.App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .review_name h3 {
+  font-weight: 200;
+}
+
 .App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .review_date {
   width: 100%;
   text-align: right;
+  color: green;
 }
 
 .App .review .review_wrapper .rec-carousel-wrapper .rec-pagination {
