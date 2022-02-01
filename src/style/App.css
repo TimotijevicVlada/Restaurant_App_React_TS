@@ -314,8 +314,93 @@
   color: black;
 }
 
+.App .home .products .products_wrapper .food .event .fa-eye {
+  color: black;
+}
+
+.App .home .products .products_wrapper .food .event .fa-eye:hover {
+  color: whitesmoke;
+}
+
 .App .home .products .products_wrapper .food .event .food_price {
   font-size: 20px;
+}
+
+.App .details_page {
+  min-height: 86vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(../image/pizza_background.jpg) repeat;
+}
+
+.App .details_page .details_wrapp {
+  width: 1000px;
+  height: 80vh;
+  background-color: rgba(232, 211, 185, 0.9);
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .details_page .details_wrapp .details_img {
+  width: 50%;
+}
+
+.App .details_page .details_wrapp .details_img img {
+  width: 100%;
+}
+
+.App .details_page .details_wrapp .details_food_info {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.App .details_page .details_wrapp .details_food_info .details_title {
+  text-align: center;
+  font-weight: 200;
+}
+
+.App .details_page .details_wrapp .details_food_info div {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+
+.App .details_page .details_wrapp .details_food_info div :first-child {
+  width: 20%;
+}
+
+.App .details_page .details_wrapp .details_food_info div .info {
+  width: 60%;
+  text-align: right;
+  font-size: 18px;
+}
+
+.App .details_page .details_wrapp .details_food_info div .event i {
+  font-size: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.App .details_page .details_wrapp .details_food_info div .event .fa-shopping-cart {
+  color: brown;
+}
+
+.App .details_page .details_wrapp .details_food_info div .event .fa-heart {
+  color: green;
 }
 
 .App .about {
@@ -844,8 +929,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #d19c9c;
+  background-color: brown;
   padding: 20px;
+  color: white;
 }
 
 .App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .review_img {
@@ -868,7 +954,7 @@
 .App .review .review_wrapper .rec-carousel-wrapper .rec-carousel .rec-slider-container .rec-carousel-item .item .review_date {
   width: 100%;
   text-align: right;
-  color: green;
+  color: orange;
 }
 
 .App .review .review_wrapper .rec-carousel-wrapper .rec-pagination {

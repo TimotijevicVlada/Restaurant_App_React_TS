@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../../context/Context';
-import { FoodProps } from '../../types/Types'; 
+import { FoodProps } from '../../types/Types';
+import { Link } from 'react-router-dom';
 
 
 const Products = () => {
 
-    const { food, cart, setCart, favorite, setFavorite } = useContext(ProductsContext);
+    const { food, cart, setCart, favorite, setFavorite, setFoodDetails } = useContext(ProductsContext);
 
     const addToCart = (item: FoodProps) => {
         const exist = cart.find(elem => elem.id === item.id);
@@ -30,7 +31,10 @@ const Products = () => {
         }
     }
 
-    console.log(favorite);
+    const viewDetails = (item: FoodProps) => {
+        const details = food.filter(elem => elem.id === item.id);
+        setFoodDetails(details[0]);
+    }
 
     return (
         <div className='home'>
@@ -70,6 +74,7 @@ const Products = () => {
                                 <div>
                                     <i className='fas fa-shopping-cart' onClick={() => addToCart(item)}></i>
                                     <i className='fas fa-heart' onClick={() => addToFav(item)}></i>
+                                    <Link to={`/details/${item.id}`}><i className='fas fa-eye' onClick={() => viewDetails(item)}></i></Link>
                                 </div>
                                 <span className='food_price'>${item.price}</span>
                             </div>

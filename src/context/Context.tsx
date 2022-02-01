@@ -23,6 +23,7 @@ type ProductsProps = {
     userToUpdate: UserProps[]
     messages: MessagesProps[]
     review: Review[]
+    foodDetails: FoodProps
     setReview: React.Dispatch<React.SetStateAction<Review[]>>
     setItemToDelete: React.Dispatch<React.SetStateAction<number | null>>
     setDeleteVisible: React.Dispatch<React.SetStateAction<boolean>>
@@ -35,6 +36,7 @@ type ProductsProps = {
     setUserToUpdate: React.Dispatch<React.SetStateAction<UserProps[]>>
     setMessages: React.Dispatch<React.SetStateAction<MessagesProps[]>>
     setFavorite: React.Dispatch<React.SetStateAction<FoodProps[]>>
+    setFoodDetails: React.Dispatch<React.SetStateAction<FoodProps>>
 }
 
 type ProductsContextProviderProps = {
@@ -59,6 +61,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const [messages, setMessages] = useState<MessagesProps[]>([]);
     const [favorite, setFavorite] = useState<FoodProps[]>([]);
     const [review, setReview] = useState<Review[]>(reviewMessages.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1));
+    const [foodDetails, setFoodDetails] = useState({} as FoodProps);
 
     //Print total quantity
     const printTotalQunatity = useCallback(() => {
@@ -90,7 +93,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             localStorage.setItem("PizzaBar", JSON.stringify({
                 food: [], favorite: [], cart: [], signupUsers: [], user: [],
                 userToUpdate: [], productToUpdate: [], adminDetails: [], messages: [],
-                review: []
+                review: [], foodDetails: {}
             }));
         } else {
             const pizzaStorage = JSON.parse(localStorage.getItem("PizzaBar") || "");
@@ -104,6 +107,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             setAdminDetails(pizzaStorage.adminDetails);
             setMessages(pizzaStorage.messages);
             setReview(pizzaStorage.review);
+            setFoodDetails(pizzaStorage.foodDetails);
         }
     }
     useEffect(() => {
@@ -122,9 +126,10 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             productToUpdate: productToUpdate,
             adminDetails: adminDetails,
             messages: messages,
-            review: review.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1)
+            review: review.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1),
+            foodDetails: foodDetails
         }));
-    }, [favorite, cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails, messages, review])
+    }, [favorite, cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails, messages, review, foodDetails])
 
     useEffect(() => {
         savePizzaStorage();
@@ -144,7 +149,8 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             userToUpdate, setUserToUpdate,
             messages, setMessages,
             favorite, setFavorite,
-            review, setReview
+            review, setReview,
+            foodDetails, setFoodDetails
         }}>
             {children}
         </ProductsContext.Provider>

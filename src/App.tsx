@@ -20,6 +20,7 @@ import AdminMessages from './components/admin/AdminMessages';
 import About from './components/pages/About';
 import Favorite from './components/pages/Favorite';
 import Review from './components/pages/Review';
+import Details from './components/pages/Details';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/details/:id" element={<Details />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/messages" element={<Messages />}/>
