@@ -6,7 +6,7 @@ const DetailsProduct = () => {
     const { adminDetails } = useContext(ProductsContext);
 
     return (
-        <div className='details_page'>
+        <div className='details_page_admin'>
             <div className='details_image'>
                 <img src={adminDetails[0]?.url} alt={adminDetails[0]?.name} />
             </div>

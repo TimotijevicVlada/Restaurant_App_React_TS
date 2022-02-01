@@ -1730,7 +1730,7 @@
   color: orange;
 }
 
-.App .admin .details_page {
+.App .admin .details_page_admin {
   -webkit-box-flex: 9;
       -ms-flex: 9;
           flex: 9;
@@ -1740,27 +1740,27 @@
   display: flex;
 }
 
-.App .admin .details_page .details_image {
+.App .admin .details_page_admin .details_image {
   width: 50%;
 }
 
-.App .admin .details_page .details_image img {
+.App .admin .details_page_admin .details_image img {
   width: 100%;
 }
 
-.App .admin .details_page .details_info {
+.App .admin .details_page_admin .details_info {
   width: 50%;
   padding: 0px 20px;
 }
 
-.App .admin .details_page .details_info h2 {
+.App .admin .details_page_admin .details_info h2 {
   text-align: center;
   font-weight: 200;
 }
 
-.App .admin .details_page .details_info .details_price,
-.App .admin .details_page .details_info .details_ingredients,
-.App .admin .details_page .details_info .details_description {
+.App .admin .details_page_admin .details_info .details_price,
+.App .admin .details_page_admin .details_info .details_ingredients,
+.App .admin .details_page_admin .details_info .details_description {
   font-size: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1771,17 +1771,17 @@
   margin-top: 30px;
 }
 
-.App .admin .details_page .details_info .details_price .details_text,
-.App .admin .details_page .details_info .details_ingredients .details_text,
-.App .admin .details_page .details_info .details_description .details_text {
+.App .admin .details_page_admin .details_info .details_price .details_text,
+.App .admin .details_page_admin .details_info .details_ingredients .details_text,
+.App .admin .details_page_admin .details_info .details_description .details_text {
   text-align: justify;
   font-size: 18px;
   width: 50%;
 }
 
-.App .admin .details_page .details_info .details_price .price,
-.App .admin .details_page .details_info .details_ingredients .price,
-.App .admin .details_page .details_info .details_description .price {
+.App .admin .details_page_admin .details_info .details_price .price,
+.App .admin .details_page_admin .details_info .details_ingredients .price,
+.App .admin .details_page_admin .details_info .details_description .price {
   font-size: 25px;
 }
 
