@@ -21,6 +21,7 @@ import About from './components/pages/About';
 import Favorite from './components/pages/Favorite';
 import Review from './components/pages/Review';
 import Details from './components/pages/Details';
+import Order from './components/pages/Order';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/details/:id" element={<Details />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<Order />} />
           <Route path="/messages" element={<Messages />}/>
           <Route path="/review" element={<Review />}/>
           <Route path="/favorite" element={<Favorite />}/>

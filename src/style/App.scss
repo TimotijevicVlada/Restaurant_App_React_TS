@@ -452,9 +452,53 @@
           padding: 5px;
           border: none;
           cursor: pointer;
+          background-color: whitesmoke;
+          color: inherit;
+          text-decoration: none;
           &:hover {
             background-color: white;
           }
+        }
+      }
+    }
+  }
+  .order {
+    min-height: 86vh;
+    background: url(../image/pizza_background.jpg) repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    .order_wrapper {
+      width: 600px;
+      min-height: 600px;
+      background-color: rgba(232, 211, 185, 0.9);
+      padding: 20px;
+      .order_title, .order_no_logged {
+        text-align: center;
+        padding: 20px 0px;
+        font-weight: 200;
+      }
+      .client_info {
+        margin-bottom: 20px;
+        div {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 5px;
+        }
+      }
+      .ordered_products {
+        div {
+          margin-bottom: 5px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          img {
+            width: 80px;
+          }
+        }
+        .ordered_total_price {
+          margin-top: 20px;
         }
       }
     }

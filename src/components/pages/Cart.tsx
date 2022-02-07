@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../../context/Context';
 import { FoodProps } from '../../types/Types'; 
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
@@ -48,7 +49,7 @@ const Cart = () => {
                     <span onClick={() => setCart([])} className='delete_all'>DELETE ALL!</span>
                     <div className='total_products'>Total products: <span>{totalQuantity}</span></div>
                     <div className='total_price'>Total price: <span>${totalPrice}</span></div>
-                    <button onClick={() => alert("Thank's for buying our food!")} className='order_btn'>ORDER</button>
+                    <Link to="/order" className='order_btn'>ORDER</Link>
                 </div>
             </div>
         </div>

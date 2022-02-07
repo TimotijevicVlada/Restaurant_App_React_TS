@@ -647,10 +647,76 @@
   padding: 5px;
   border: none;
   cursor: pointer;
+  background-color: whitesmoke;
+  color: inherit;
+  text-decoration: none;
 }
 
 .App .cart .cart_total .total_info .order_btn:hover {
   background-color: white;
+}
+
+.App .order {
+  min-height: 86vh;
+  background: url(../image/pizza_background.jpg) repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0px;
+}
+
+.App .order .order_wrapper {
+  width: 600px;
+  min-height: 600px;
+  background-color: rgba(232, 211, 185, 0.9);
+  padding: 20px;
+}
+
+.App .order .order_wrapper .order_title, .App .order .order_wrapper .order_no_logged {
+  text-align: center;
+  padding: 20px 0px;
+  font-weight: 200;
+}
+
+.App .order .order_wrapper .client_info {
+  margin-bottom: 20px;
+}
+
+.App .order .order_wrapper .client_info div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.App .order .order_wrapper .ordered_products div {
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .order .order_wrapper .ordered_products div img {
+  width: 80px;
+}
+
+.App .order .order_wrapper .ordered_products .ordered_total_price {
+  margin-top: 20px;
 }
 
 .App .messages {
