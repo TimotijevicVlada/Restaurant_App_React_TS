@@ -1950,6 +1950,13 @@
   background-color: #ff3535;
 }
 
+.App .admin .ordered_products {
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+  padding: 20px;
+}
+
 .App .footer {
   height: 7vh;
   display: -webkit-box;

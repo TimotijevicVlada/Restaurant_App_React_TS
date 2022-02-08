@@ -8,6 +8,7 @@ const AdminAside = () => {
             <Link to="/admin/create" className='link'>Create new</Link>
             <Link to="/admin/users" className='link'>Users</Link>
             <Link to="/admin/adminmessages" className='link'>Messages</Link>
+            <Link to="/admin/orderedproducts" className='link'>Ordered</Link>
         </div>
     )
 }

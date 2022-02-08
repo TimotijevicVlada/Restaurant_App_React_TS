@@ -6,45 +6,11 @@ import { FoodProps } from "../types/Types";
 import { UserProps } from "../types/Types";
 import { MessagesProps } from "../types/Types";
 import { Review } from "../types/Types";
-
-
-type ProductsProps = {
-    food: FoodProps[]
-    cart: FoodProps[]
-    favorite: FoodProps[]
-    productToUpdate: FoodProps[]
-    totalQuantity: number
-    totalPrice: number
-    adminDetails: FoodProps[]
-    deleteVisible: boolean
-    itemToDelete: number | null
-    signupUsers: UserProps[]
-    user: UserProps[]
-    userToUpdate: UserProps[]
-    messages: MessagesProps[]
-    review: Review[]
-    foodDetails: FoodProps
-    setReview: React.Dispatch<React.SetStateAction<Review[]>>
-    setItemToDelete: React.Dispatch<React.SetStateAction<number | null>>
-    setDeleteVisible: React.Dispatch<React.SetStateAction<boolean>>
-    setAdminDetails: React.Dispatch<React.SetStateAction<FoodProps[]>>
-    setCart: React.Dispatch<React.SetStateAction<FoodProps[]>>
-    setFood: React.Dispatch<React.SetStateAction<FoodProps[]>>
-    setProductToUpdate: React.Dispatch<React.SetStateAction<FoodProps[]>>
-    setSignupUsers: React.Dispatch<React.SetStateAction<UserProps[]>>
-    setUser: React.Dispatch<React.SetStateAction<UserProps[]>>
-    setUserToUpdate: React.Dispatch<React.SetStateAction<UserProps[]>>
-    setMessages: React.Dispatch<React.SetStateAction<MessagesProps[]>>
-    setFavorite: React.Dispatch<React.SetStateAction<FoodProps[]>>
-    setFoodDetails: React.Dispatch<React.SetStateAction<FoodProps>>
-}
-
-type ProductsContextProviderProps = {
-    children: React.ReactNode
-}
+import { OrderProps } from "../types/Types";
+import {ProductsProps} from "../types/Types";
+import {ProductsContextProviderProps} from "../types/Types";
 
 export const ProductsContext = createContext({} as ProductsProps);
-
 export const ProductsContextProvider = ({ children }: ProductsContextProviderProps) => {
 
     const [food, setFood] = useState<FoodProps[]>(products);
@@ -62,6 +28,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
     const [favorite, setFavorite] = useState<FoodProps[]>([]);
     const [review, setReview] = useState<Review[]>(reviewMessages.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1));
     const [foodDetails, setFoodDetails] = useState({} as FoodProps);
+    const [orderedProducts, setOrderedProducts] = useState<OrderProps[]>([]);
 
     //Print total quantity
     const printTotalQunatity = useCallback(() => {
@@ -150,7 +117,8 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             messages, setMessages,
             favorite, setFavorite,
             review, setReview,
-            foodDetails, setFoodDetails
+            foodDetails, setFoodDetails,
+            orderedProducts, setOrderedProducts
         }}>
             {children}
         </ProductsContext.Provider>

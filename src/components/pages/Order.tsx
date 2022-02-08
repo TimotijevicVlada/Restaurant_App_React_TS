@@ -1,9 +1,27 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ProductsContext } from '../../context/Context';
 
 const Order = () => {
 
-    const { user, cart, totalPrice } = useContext(ProductsContext);
+    const { user, cart, totalPrice, orderedProducts, setOrderedProducts } = useContext(ProductsContext);
+
+    const addProductsToOrdered = () => {
+        const newProducts = {
+            username: user[0].username,
+            email: user[0].email,
+            products: cart
+        }
+        setOrderedProducts([
+            ...orderedProducts,
+            newProducts
+        ])
+    }
+
+    useEffect(() => {
+        addProductsToOrdered();
+    }, [])
+
+    console.log(orderedProducts);
 
     return (
         <div className='order'>

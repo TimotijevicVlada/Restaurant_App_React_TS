@@ -22,6 +22,7 @@ import Favorite from './components/pages/Favorite';
 import Review from './components/pages/Review';
 import Details from './components/pages/Details';
 import Order from './components/pages/Order';
+import OrderedProducts from './components/admin/OrderedProducts';
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
             <Route path="/admin/details" element={<DetailsProduct />} />
             <Route path="/admin/users" element={<Users />} />
             <Route path="/admin/adminmessages" element={<AdminMessages />} />
+            <Route path="/admin/orderedproducts" element={<OrderedProducts />} />
           </Route>
         </Routes>
         <Footer />
