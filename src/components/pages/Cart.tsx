@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../../context/Context';
-import { FoodProps } from '../../types/Types'; 
+import { FoodProps } from '../../types/Types';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-    const { cart, setCart, totalPrice, totalQuantity } = useContext(ProductsContext);
+    const { cart, setCart, totalPrice, totalQuantity, user, orderedProducts, setOrderedProducts } = useContext(ProductsContext);
 
     const handleDelete = (item: FoodProps) => {
         const deleted = cart.filter(elem => elem.id !== item.id);
@@ -22,6 +22,26 @@ const Cart = () => {
         setCart(cart.map(elem => elem.id === item.id ?
             { ...elem, quantity: elem.quantity === 1 ? 1 : elem.quantity - 1 } : elem
         ))
+    }
+
+    const addProductsToOrdered = () => {
+        if (cart.length < 1) {
+            alert("You didn't choose products!");
+        } else if(user.length < 1) {
+            alert("You are not logged in!");
+        } else {
+            const newProducts = {
+                id: Math.floor(Math.random() * 1000000),
+                username: user[0].username,
+                email: user[0].email,
+                products: cart,
+                tPrice: totalPrice
+            }
+            setOrderedProducts([
+                ...orderedProducts,
+                newProducts
+            ])
+        }
     }
 
     return (
@@ -49,7 +69,7 @@ const Cart = () => {
                     <span onClick={() => setCart([])} className='delete_all'>DELETE ALL!</span>
                     <div className='total_products'>Total products: <span>{totalQuantity}</span></div>
                     <div className='total_price'>Total price: <span>${totalPrice}</span></div>
-                    <Link to="/order" className='order_btn'>ORDER</Link>
+                    {cart.length > 0 && user.length > 0 && <Link onClick={addProductsToOrdered} to="/order" className='order_btn'>ORDER</Link>}
                 </div>
             </div>
         </div>

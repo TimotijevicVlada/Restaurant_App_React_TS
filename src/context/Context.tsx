@@ -60,7 +60,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             localStorage.setItem("PizzaBar", JSON.stringify({
                 food: [], favorite: [], cart: [], signupUsers: [], user: [],
                 userToUpdate: [], productToUpdate: [], adminDetails: [], messages: [],
-                review: [], foodDetails: {}
+                review: [], foodDetails: {}, orderedProducts: []
             }));
         } else {
             const pizzaStorage = JSON.parse(localStorage.getItem("PizzaBar") || "");
@@ -75,6 +75,7 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             setMessages(pizzaStorage.messages);
             setReview(pizzaStorage.review);
             setFoodDetails(pizzaStorage.foodDetails);
+            setOrderedProducts(pizzaStorage.orderedProducts);
         }
     }
     useEffect(() => {
@@ -94,9 +95,10 @@ export const ProductsContextProvider = ({ children }: ProductsContextProviderPro
             adminDetails: adminDetails,
             messages: messages,
             review: review.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1),
-            foodDetails: foodDetails
+            foodDetails: foodDetails,
+            orderedProducts: orderedProducts
         }));
-    }, [favorite, cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails, messages, review, foodDetails])
+    }, [ orderedProducts, favorite, cart, food, signupUsers, user, userToUpdate, productToUpdate, adminDetails, messages, review, foodDetails])
 
     useEffect(() => {
         savePizzaStorage();

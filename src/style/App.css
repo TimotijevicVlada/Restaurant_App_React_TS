@@ -1536,15 +1536,16 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: whitesmoke;
+  background-color: beige;
 }
 
 .App .admin .aside_menu .link {
   color: inherit;
   text-align: center;
   text-decoration: none;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid brown;
   padding: 15px 0px;
+  margin: 0px 10px;
   font-size: 18px;
 }
 
@@ -1962,9 +1963,17 @@
   font-weight: 200;
 }
 
+.App .admin .ordered_products .no_order {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
 .App .admin .ordered_products .ordered_item {
-  border: 1px solid black;
+  border: 1px solid gray;
   padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: whitesmoke;
 }
 
 .App .admin .ordered_products .ordered_item .ordered_row {

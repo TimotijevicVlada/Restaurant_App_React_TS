@@ -8,7 +8,7 @@ const OrderedProducts = () => {
     return (
         <div className='ordered_products'>
             <h2>Ordered products</h2>
-            {orderedProducts.map(item => (
+            {orderedProducts.length < 1 ? <div className='no_order'>There is no ordered products!</div> : orderedProducts.map(item => (
                 <div key={item.id} className='ordered_item'>
                     <div className='ordered_row'>
                         <span className='row_item'>Name</span>
