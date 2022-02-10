@@ -34,9 +34,11 @@ export type Review = {
 }
 
 export type OrderProps = {
+    id: number
     username: string
     email: string
     products: FoodProps[]
+    tPrice: number
 }
 
 export type ProductsProps = {

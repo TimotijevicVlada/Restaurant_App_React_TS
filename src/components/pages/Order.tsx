@@ -1,27 +1,27 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useCallback } from 'react';
 import { ProductsContext } from '../../context/Context';
 
 const Order = () => {
 
     const { user, cart, totalPrice, orderedProducts, setOrderedProducts } = useContext(ProductsContext);
 
-    const addProductsToOrdered = () => {
+    const addProductsToOrdered = useCallback( () => {
         const newProducts = {
+            id: Math.floor(Math.random() * 1000000),
             username: user[0].username,
             email: user[0].email,
-            products: cart
+            products: cart,
+            tPrice: totalPrice
         }
         setOrderedProducts([
             ...orderedProducts,
             newProducts
         ])
-    }
+    }, [cart, orderedProducts, setOrderedProducts, totalPrice, user])
 
     useEffect(() => {
         addProductsToOrdered();
-    }, [])
-
-    console.log(orderedProducts);
+    }, [addProductsToOrdered])
 
     return (
         <div className='order'>

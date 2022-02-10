@@ -1957,6 +1957,31 @@
   padding: 20px;
 }
 
+.App .admin .ordered_products h2 {
+  text-align: center;
+  font-weight: 200;
+}
+
+.App .admin .ordered_products .ordered_item {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+.App .admin .ordered_products .ordered_item .ordered_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid gray;
+  margin-top: 5px;
+}
+
+.App .admin .ordered_products .ordered_item .ordered_row .row_item span {
+  margin-left: 5px;
+}
+
 .App .footer {
   height: 7vh;
   display: -webkit-box;
