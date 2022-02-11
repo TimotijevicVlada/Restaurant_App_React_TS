@@ -175,6 +175,14 @@
           padding: 5px 10px;
           font-size: 18px;
           border: none;
+          margin-right: 10px;
+          &:focus {
+            outline: none;
+          }
+        }
+        .select_filter {
+          font-size: 18px;
+          border: none;
           &:focus {
             outline: none;
           }

@@ -252,9 +252,19 @@
   padding: 5px 10px;
   font-size: 18px;
   border: none;
+  margin-right: 10px;
 }
 
 .App .home .products .products_header input:focus {
+  outline: none;
+}
+
+.App .home .products .products_header .select_filter {
+  font-size: 18px;
+  border: none;
+}
+
+.App .home .products .products_header .select_filter:focus {
   outline: none;
 }
 

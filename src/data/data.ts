@@ -14,7 +14,7 @@ export const products = [
         url: "https://i0.wp.com/www.eatlanka.com/wp-content/uploads/2021/04/991307.jpg",
         price: 11,
         quantity: 1,
-        ingredients: "cheese, eggs, kulen, paper, tomato",
+        ingredients: "cheese, kulen, paper, tomato",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium alias architecto temporibus ipsum nemo totam dolorem impedit quasi amet consectetur, ipsa repellat dignissimos rerum rem tempora quam ab commodi excepturi?"
     },
     {
@@ -41,7 +41,7 @@ export const products = [
         url: "https://www.simplyrecipes.com/thmb/8caxM88NgxZjz-T2aeRW3xjhzBg=/2000x1125/smart/filters:no_upscale()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-8f256746d649404baa36a44d271329bc.jpg",
         price: 8,
         quantity: 1,
-        ingredients: "cheese, eggs, kulen, paper, tomato, paper, chilli",
+        ingredients: "cheese, kulen, paper, tomato, paper, chilli",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium alias architecto temporibus ipsum nemo totam dolorem impedit quasi amet consectetur, ipsa repellat dignissimos rerum rem tempora quam ab commodi excepturi?"
     },
     {
@@ -68,7 +68,7 @@ export const products = [
         url: "https://previews.123rf.com/images/shoot/shoot1311/shoot131100033/23418252-pizza-with-hum-cheese-tomato-and-pepper-on-papper.jpg",
         price: 14,
         quantity: 1,
-        ingredients: "cheese, eggs, kulen, paper, tomato, hum",
+        ingredients: "cheese, eggs, kulen, tomato, hum",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium alias architecto temporibus ipsum nemo totam dolorem impedit quasi amet consectetur, ipsa repellat dignissimos rerum rem tempora quam ab commodi excepturi?"
     }
 ]

@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 
 const Products = () => {
 
-    const [search, setSearch] = useState<string>("");
+
     const { food, cart, setCart, favorite, setFavorite, setFoodDetails } = useContext(ProductsContext);
+    const [displayFood, setDisplayFood] = useState(food)
 
     const addToCart = (item: FoodProps) => {
         const exist = cart.find(elem => elem.id === item.id);
@@ -37,8 +38,19 @@ const Products = () => {
         setFoodDetails(details[0]);
     }
 
-    //Filtered products
-    const filtered = food.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
+    const handleChangeFilter = (event: string) => {
+        const filtered = food.filter(item => item.name.toLowerCase().includes(event.toLowerCase()));
+        setDisplayFood(filtered);
+    }
+
+    const handleSelectFilter = (event: string) => {
+        const filtered = food.filter(item => item.ingredients.toLowerCase().includes(event.toLowerCase()));
+        if (event === "all") {
+            setDisplayFood(food);
+        } else {
+            setDisplayFood(filtered);
+        }
+    }
 
     return (
         <div className='home'>
@@ -63,10 +75,16 @@ const Products = () => {
             <div className='products'>
                 <div className='products_header'>
                     <h2 className='products_title'>Our offer</h2>
-                    <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Search by name' />
+                    <input onChange={(e) => handleChangeFilter(e.target.value)} type="text" placeholder='Search by name' />
+                    <select onChange={e => handleSelectFilter(e.target.value)} className='select_filter'>
+                        <option value="all">All</option>
+                        <option value="chilli">Chilli</option>
+                        <option value="eggs">Eggs</option>
+                        <option value="paper">Paper</option>
+                    </select>
                 </div>
                 <div className='products_wrapper'>
-                    {filtered.map((item, index) => (
+                    {displayFood.map((item, index) => (
                         <div key={index} className='food'>
                             <img src={item.url} alt="slika" className='food_img' />
                             <div className='stars'>
