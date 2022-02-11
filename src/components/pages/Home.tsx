@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ProductsContext } from '../../context/Context';
 import { FoodProps } from '../../types/Types';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Products = () => {
 
+    const [search, setSearch] = useState<string>("");
     const { food, cart, setCart, favorite, setFavorite, setFoodDetails } = useContext(ProductsContext);
 
     const addToCart = (item: FoodProps) => {
@@ -36,6 +37,9 @@ const Products = () => {
         setFoodDetails(details[0]);
     }
 
+    //Filtered products
+    const filtered = food.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
+
     return (
         <div className='home'>
             <div className='header'>
@@ -57,9 +61,12 @@ const Products = () => {
                 </div>
             </div>
             <div className='products'>
-                <h2 className='products_title'>Our offer</h2>
+                <div className='products_header'>
+                    <h2 className='products_title'>Our offer</h2>
+                    <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Search by name' />
+                </div>
                 <div className='products_wrapper'>
-                    {food.map((item, index) => (
+                    {filtered.map((item, index) => (
                         <div key={index} className='food'>
                             <img src={item.url} alt="slika" className='food_img' />
                             <div className='stars'>

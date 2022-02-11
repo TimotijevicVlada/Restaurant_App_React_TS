@@ -233,12 +233,29 @@
   background: url(../image/pizza_background.jpg) repeat;
 }
 
-.App .home .products .products_title {
+.App .home .products .products_header {
+  margin: 20px 0px 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .home .products .products_header .products_title {
   font-weight: 200;
   background-color: brown;
-  padding: 5px 20px;
-  margin: 20px 0px 10px 0px;
   color: white;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.App .home .products .products_header input {
+  padding: 5px 10px;
+  font-size: 18px;
+  border: none;
+}
+
+.App .home .products .products_header input:focus {
+  outline: none;
 }
 
 .App .home .products .products_wrapper {
@@ -678,7 +695,8 @@
   padding: 20px;
 }
 
-.App .order .order_wrapper .order_title, .App .order .order_wrapper .order_no_logged {
+.App .order .order_wrapper .order_title,
+.App .order .order_wrapper .order_no_logged {
   text-align: center;
   padding: 20px 0px;
   font-weight: 200;

@@ -160,12 +160,25 @@
       align-items: center;
       min-height: 93vh;
       background: url(../image/pizza_background.jpg) repeat;
-      .products_title {
-        font-weight: 200;
-        background-color: brown;
-        padding: 5px 20px;
+      .products_header {
         margin: 20px 0px 10px 0px;
-        color: white;
+        display: flex;
+        .products_title {
+          font-weight: 200;
+          background-color: brown;
+          color: white;
+          padding: 5px 10px;
+          margin-right: 10px;
+         
+        }
+        input {
+          padding: 5px 10px;
+          font-size: 18px;
+          border: none;
+          &:focus {
+            outline: none;
+          }
+        }
       }
       .products_wrapper {
         display: grid;
@@ -474,7 +487,8 @@
       min-height: 600px;
       background-color: rgba(232, 211, 185, 0.9);
       padding: 20px;
-      .order_title, .order_no_logged {
+      .order_title,
+      .order_no_logged {
         text-align: center;
         padding: 20px 0px;
         font-weight: 200;
