@@ -238,6 +238,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .App .home .products .products_header .products_title {
@@ -262,10 +265,18 @@
 .App .home .products .products_header .select_filter {
   font-size: 18px;
   border: none;
+  margin-right: 10px;
 }
 
 .App .home .products .products_header .select_filter:focus {
   outline: none;
+}
+
+.App .home .products .products_header .checkbox_filter {
+  margin-left: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
 
 .App .home .products .products_wrapper {

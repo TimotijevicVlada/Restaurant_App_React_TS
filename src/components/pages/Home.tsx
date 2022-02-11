@@ -8,7 +8,7 @@ const Products = () => {
 
 
     const { food, cart, setCart, favorite, setFavorite, setFoodDetails } = useContext(ProductsContext);
-    const [displayFood, setDisplayFood] = useState(food)
+    const [displayFood, setDisplayFood] = useState(food);
 
     const addToCart = (item: FoodProps) => {
         const exist = cart.find(elem => elem.id === item.id);
@@ -52,6 +52,16 @@ const Products = () => {
         }
     }
 
+    const handleCheckbox = (event: boolean) => {
+        const kulenName = "kulen";
+        const kulen = food.filter(item => item.ingredients.toLowerCase().includes(kulenName));
+        if (event) {
+            setDisplayFood(kulen);
+        } else {
+            setDisplayFood(food);
+        }
+    }
+
     return (
         <div className='home'>
             <div className='header'>
@@ -82,6 +92,8 @@ const Products = () => {
                         <option value="eggs">Eggs</option>
                         <option value="paper">Paper</option>
                     </select>
+                    <span>Kulen</span>
+                    <input onChange={e => handleCheckbox(e.target.checked)} className='checkbox_filter' type="checkbox" />
                 </div>
                 <div className='products_wrapper'>
                     {displayFood.map((item, index) => (

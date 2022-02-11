@@ -163,6 +163,7 @@
       .products_header {
         margin: 20px 0px 10px 0px;
         display: flex;
+        align-items: center;
         .products_title {
           font-weight: 200;
           background-color: brown;
@@ -183,9 +184,16 @@
         .select_filter {
           font-size: 18px;
           border: none;
+          margin-right: 10px;
           &:focus {
             outline: none;
           }
+        }
+        .checkbox_filter {
+          margin-left: 5px;
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
         }
       }
       .products_wrapper {
