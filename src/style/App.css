@@ -241,6 +241,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 85%;
 }
 
 .App .home .products .products_header .products_title {
@@ -248,35 +253,72 @@
   background-color: brown;
   color: white;
   padding: 5px 10px;
-  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
-.App .home .products .products_header input {
+.App .home .products .products_header .sort_filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: brown;
+  padding: 5px 30px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
+}
+
+.App .home .products .products_header .sort_filter .search_filter {
   padding: 5px 10px;
   font-size: 18px;
   border: none;
   margin-right: 10px;
 }
 
-.App .home .products .products_header input:focus {
+.App .home .products .products_header .sort_filter .search_filter:focus {
   outline: none;
 }
 
-.App .home .products .products_header .select_filter {
+.App .home .products .products_header .sort_filter .select_filter {
+  font-size: 18px;
+  border: none;
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+.App .home .products .products_header .sort_filter .select_filter:focus {
+  outline: none;
+}
+
+.App .home .products .products_header .sort_filter .checkbox_filter {
+  margin-left: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.App .home .products .products_header .sort_filter .sort {
+  padding: 5px 10px;
   font-size: 18px;
   border: none;
   margin-right: 10px;
 }
 
-.App .home .products .products_header .select_filter:focus {
+.App .home .products .products_header .sort_filter .sort:focus {
   outline: none;
 }
 
-.App .home .products .products_header .checkbox_filter {
-  margin-left: 5px;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
+.App .home .products .products_header .sort_filter .checkbox {
+  color: white;
+}
+
+.App .home .products .products_header .sort_filter .checkbox_filter {
+  margin-right: 10px;
 }
 
 .App .home .products .products_wrapper {

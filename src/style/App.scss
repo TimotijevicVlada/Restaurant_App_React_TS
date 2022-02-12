@@ -164,36 +164,62 @@
         margin: 20px 0px 10px 0px;
         display: flex;
         align-items: center;
+        flex-direction: column;
+        width: 85%;
         .products_title {
           font-weight: 200;
           background-color: brown;
           color: white;
           padding: 5px 10px;
-          margin-right: 10px;
-         
+          margin-bottom: 10px;
         }
-        input {
-          padding: 5px 10px;
-          font-size: 18px;
-          border: none;
-          margin-right: 10px;
-          &:focus {
-            outline: none;
+        .sort_filter {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: brown;
+          padding: 5px 30px;
+          align-self: center;
+          width: 100%;
+          .search_filter {
+            padding: 5px 10px;
+            font-size: 18px;
+            border: none;
+            margin-right: 10px;
+            &:focus {
+              outline: none;
+            }
           }
-        }
-        .select_filter {
-          font-size: 18px;
-          border: none;
-          margin-right: 10px;
-          &:focus {
-            outline: none;
+          .select_filter {
+            font-size: 18px;
+            border: none;
+            margin-right: 10px;
+            padding: 5px 10px;
+            &:focus {
+              outline: none;
+            }
           }
-        }
-        .checkbox_filter {
-          margin-left: 5px;
-          cursor: pointer;
-          width: 20px;
-          height: 20px;
+          .checkbox_filter {
+            margin-left: 5px;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+          }
+          .sort {
+            padding: 5px 10px;
+            font-size: 18px;
+            border: none;
+            margin-right: 10px;
+            &:focus {
+              outline: none;
+            }
+          }
+          .checkbox {
+            color: white;
+          }
+          .checkbox_filter {
+             margin-right: 10px;
+          }
         }
       }
       .products_wrapper {

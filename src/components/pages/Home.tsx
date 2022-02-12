@@ -8,7 +8,8 @@ const Products = () => {
 
 
     const { food, cart, setCart, favorite, setFavorite, setFoodDetails } = useContext(ProductsContext);
-    const [displayFood, setDisplayFood] = useState(food);
+    const [sort, setSort] = useState("asc");
+    const [displayFood, setDisplayFood] = useState(sort === "asc" ? food.sort((a, b) => a.price - b.price) : food.sort((a, b) => b.price - a.price));
 
     const addToCart = (item: FoodProps) => {
         const exist = cart.find(elem => elem.id === item.id);
@@ -52,13 +53,31 @@ const Products = () => {
         }
     }
 
-    const handleCheckbox = (event: boolean) => {
+    const handleKulen = (event: boolean) => {
         const kulenName = "kulen";
         const kulen = food.filter(item => item.ingredients.toLowerCase().includes(kulenName));
         if (event) {
             setDisplayFood(kulen);
         } else {
             setDisplayFood(food);
+        }
+    }
+
+    const handlePepper = (event: boolean) => {
+        const pepperName = "pepper";
+        const pepper = food.filter(item => item.ingredients.toLowerCase().includes(pepperName));
+        if (event) {
+            setDisplayFood(pepper);
+        } else {
+            setDisplayFood(food);
+        }
+    }
+
+    const handleSort = (e: string) => {
+        if (e === "asc") {
+            setSort("asc");
+        } else {
+            setSort("desc");
         }
     }
 
@@ -85,15 +104,23 @@ const Products = () => {
             <div className='products'>
                 <div className='products_header'>
                     <h2 className='products_title'>Our offer</h2>
-                    <input onChange={(e) => handleChangeFilter(e.target.value)} type="text" placeholder='Search by name' />
-                    <select onChange={e => handleSelectFilter(e.target.value)} className='select_filter'>
-                        <option value="all">All</option>
-                        <option value="chilli">Chilli</option>
-                        <option value="eggs">Eggs</option>
-                        <option value="paper">Paper</option>
-                    </select>
-                    <span>Kulen</span>
-                    <input onChange={e => handleCheckbox(e.target.checked)} className='checkbox_filter' type="checkbox" />
+                    <div className='sort_filter'>
+                        <input className='search_filter' onChange={(e) => handleChangeFilter(e.target.value)} type="text" placeholder='Search by name' />
+                        <select onChange={e => handleSelectFilter(e.target.value)} className='select_filter'>
+                            <option value="all">All</option>
+                            <option value="chilli">Chilli</option>
+                            <option value="eggs">Eggs</option>
+                            <option value="paper">Paper</option>
+                        </select>
+                        <select className='sort' onChange={e => handleSort(e.target.value)}>
+                            <option value="asc">Asc</option>
+                            <option value="desc">Desc</option>
+                        </select>
+                        <span className='checkbox'>Kulen</span>
+                        <input onChange={e => handleKulen(e.target.checked)} className='checkbox_filter' type="checkbox" />
+                        <span className='checkbox'>Pepper</span>
+                        <input onChange={e => handlePepper(e.target.checked)} className='checkbox_filter' type="checkbox" />
+                    </div>
                 </div>
                 <div className='products_wrapper'>
                     {displayFood.map((item, index) => (
