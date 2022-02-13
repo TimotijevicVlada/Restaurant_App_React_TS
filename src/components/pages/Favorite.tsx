@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import Carousel from "react-elastic-carousel";
 import { ProductsContext } from "../../context/Context";
-import { FoodProps } from '../../types/Types'; 
+import { FoodProps } from '../../types/Types';
+import { Link } from 'react-router-dom';
 
 const Favorite = () => {
 
-  const { favorite, setFavorite, cart, setCart } = useContext(ProductsContext);
+  const { favorite, setFavorite, cart, setCart, food, setFoodDetails } = useContext(ProductsContext);
 
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -23,6 +24,11 @@ const Favorite = () => {
     } else {
       setCart([...cart, { ...item }])
     }
+  }
+
+  const viewDetails = (item: FoodProps) => {
+    const details = food.filter(elem => elem.id === item.id);
+    setFoodDetails(details[0]);
   }
 
   const handleDelete = (item: FoodProps) => {
@@ -52,7 +58,7 @@ const Favorite = () => {
                 <div className='fav_events'>
                   <div>
                     <i onClick={() => addToCart(item)} className='fas fa-shopping-cart'></i>
-                    <i className="far fa-eye"></i>
+                    <Link to={`/details/${item.id}`}><i className='fas fa-eye' onClick={() => viewDetails(item)}></i></Link>
                   </div>
                   <i onClick={() => handleDelete(item)} className='fas fa-trash-alt'></i>
                 </div>

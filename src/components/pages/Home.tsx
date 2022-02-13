@@ -110,7 +110,7 @@ const Products = () => {
                             <option value="all">All</option>
                             <option value="chilli">Chilli</option>
                             <option value="eggs">Eggs</option>
-                            <option value="paper">Paper</option>
+                            <option value="pepper">Paper</option>
                         </select>
                         <select className='sort' onChange={e => handleSort(e.target.value)}>
                             <option value="asc">Asc</option>
